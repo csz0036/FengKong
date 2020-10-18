@@ -100,6 +100,7 @@ export default {
                     height: 3px;
                     position: absolute;
                     background: #2970D5;
+                    border-radius: 3px;
                     bottom: -10px;
                     left: 0;
                 }
