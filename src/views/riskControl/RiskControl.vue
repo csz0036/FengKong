@@ -138,7 +138,7 @@ export default {
 
     data() {
         return {
-             bannerBg: require("@/assets/about/banner.png"),
+             bannerBg: require("@/assets/riskControl/banner.png"),
             iconUrl1: require("@/assets/riskControl/icon1.png"),
             imgUrl1: require("@/assets/riskControl/img1.png"),
             iconUrl2: require("@/assets/riskControl/icon2.png"),
