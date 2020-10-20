@@ -17,6 +17,21 @@ const routes = [
         name: 'About',
         component: () => import(/* webpackChunkName: "about" */ '@/views/about/About')
     },
+     // 风控案例
+     {
+        path: '/riskControl',
+        name: 'RiskControl',
+        component: () => import(/* webpackChunkName: "riskControl" */ '@/views/riskControl/RiskControl')
+    },
+
+      // 专项方案
+      {
+        path: '/scheme',
+        name: 'Scheme',
+        component: () => import(/* webpackChunkName: "scheme" */ '@/views/scheme/Scheme')
+    },
+    // todo: 页面刷新，那个下标有点问题
+
 
 ];
 

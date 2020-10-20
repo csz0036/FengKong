@@ -21,6 +21,8 @@
                     </li>
                 </ul>
             </div>
+
+            <!-- todo： 少了个预约演示按钮 -->
         </div>
     </div>
 </template>
@@ -41,11 +43,11 @@ export default {
                 },
                 {
                     name:'风控案例',
-                    path: '/about'
+                    path: '/riskControl'
                 },
                 {
                     name:'专项方案',
-                    path: '/about'
+                    path: '/scheme'
                 }
             ],
             isActive: 0, // 选中
