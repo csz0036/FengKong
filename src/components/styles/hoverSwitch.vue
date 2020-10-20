@@ -3,13 +3,8 @@
     <div class="parallel-box">
         <p class="title">{{ title }}</p>
 
-        <div :class="`hover-box ${position}`">
-            <div
-                v-for="(i, iIndex) in dataList"
-                :key="iIndex"
-                class="item"
-                :style="{ width: imgWidth + 'px', height: imgHeight + 'px' }"
-            >
+        <div :class="`hover-box ${size}`">
+            <div v-for="(i, iIndex) in dataList" :key="iIndex" class="item">
                 <div class="normal">
                     <img :src="i.iconUrl" alt="" />
                     <p>{{ i.name }}</p>
@@ -38,22 +33,22 @@ export default {
                 return [];
             },
         },
-        position: {
+        size: {
             type: String,
-            default: "leftBox",
+            default: "",
         },
         imgUrl: {
             type: String,
             default: "",
         },
-        imgWidth: {
-            type: String,
-            default: "372",
-        },
-        imgHeight: {
-            type: String,
-            default: "194",
-        },
+        // imgWidth: {
+        //     type: String,
+        //     default: "372",
+        // },
+        // imgHeight: {
+        //     type: String,
+        //     default: "194",
+        // },
     },
 
     data() {
@@ -66,9 +61,32 @@ export default {
 
 <style lang="scss" scoped>
 .parallel-box {
+    margin-top: 100px;
     .hover-box {
         display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         // align-items: center;
+        &.reverse{
+            flex-wrap: wrap-reverse;
+        }
+        &.big {
+            .item {
+                width: 520px;
+                height: 228px;
+                margin: 0 10px 10px 0;
+            }
+            .normal {
+                width: 92px;
+                height: 92px;
+            }
+            .name {
+                font-size: 20px;
+            }
+            .active {
+                padding: 80px;
+            }
+        }
     }
     .title {
         font-size: 26px;
@@ -90,25 +108,23 @@ export default {
     }
 
     .item {
+        width: 360px;
+        height: 194px;
         background: linear-gradient(194deg, #b2d1ff 0%, #4a8eef 100%);
         background-color: #4a8eef;
         border-radius: 4px;
-        margin-right: 32px;
+        margin: 0 30px 30px 0;
         color: #ffffff;
         position: relative;
         cursor: pointer;
-        // display: none;
-            transition: background-color 1s;
+        transition: background-color 1s;
         &:hover {
             background: #5a87cb;
-            .active{
-                // display: block;
-                  opacity: 1;
+            .active {
+                opacity: 1;
             }
-            .normal{
+            .normal {
                 opacity: 0;
-                // transition: opacity .5s;
-                // display: none;
             }
         }
     }
@@ -119,8 +135,7 @@ export default {
     }
 
     .active {
-        // display: none;
-         opacity: 0;
+        opacity: 0;
         font-size: 14px;
         line-height: 24px;
         padding: 50px;
@@ -128,24 +143,20 @@ export default {
 
     .active,
     .normal {
-        transition: opacity .5s;
-        // position: absolute;
-        // left: 0;
-        // right: 0;
-        // top: 0;
-        // bottom: 0;
+        transition: opacity 0.5s;
     }
-    .normal{
+    .normal {
         text-align: center;
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
 
-        img{
-        width: 76px;
-        height: 76px;
-        margin-bottom: 18px;}
+        img {
+            width: 76px;
+            height: 76px;
+            margin-bottom: 18px;
+        }
     }
 }
 </style>

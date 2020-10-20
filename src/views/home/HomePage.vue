@@ -161,7 +161,7 @@ export default {
     }
     .cont-parallel,
     .dividing-line2 {
-        width: 1180px;
+        width: $pc_main_size;
         margin: 0 auto;
     }
     .cont-scenes {

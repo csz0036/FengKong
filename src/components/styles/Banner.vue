@@ -50,8 +50,8 @@ export default {
 <style lang="scss" scoped>
 .banner-box {
     height: 400px;
+    background-position: center center;
     background-size: cover;
-   
 
     .banner-cont {
         width: 420px;

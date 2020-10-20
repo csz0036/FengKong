@@ -183,7 +183,7 @@ export default {
         }
     }
     .cont-parallel {
-        width: 1180px;
+        width: $pc_main_size;
         margin: 0 auto;
     }
 

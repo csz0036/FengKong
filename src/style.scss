@@ -59,6 +59,7 @@ input, select {
 }
 // 移动端分界点
 $__mobile__size: 850px;
+$pc_main_size: 1180px;
 
 @mixin fontsize($size, $spacing: 2) {
     // font-size: $size / 1920 * 100 + vw;
@@ -71,7 +72,7 @@ $__mobile__size: 850px;
     letter-spacing: $spacing + px;
 }
 .cw{
-    width: 1180px;
+    width: $pc_main_size;
     margin: 0 auto;
 }
 .dis-cont{
@@ -102,3 +103,4 @@ $__mobile__size: 850px;
     width: 100%;
     border: 1px solid #E4E4E4;
 }
+
