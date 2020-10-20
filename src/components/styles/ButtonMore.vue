@@ -56,7 +56,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@media screen and (min-width: $__mobile__size) {
+// @media screen and (min-width: $__mobile__size) {
     .buttonMore {
         text-decoration: unset;
         user-select: none;
@@ -65,12 +65,17 @@ export default {
         // 有背景色
         &.style01,
         &.style02 {
+            width: 180px;
+            height: 62px;
+            line-height: 62px;
+            box-sizing: border-box;
+            color: #1497fb;
+            line-height: 22px;
             position: relative;
             display: inline-flex;
             justify-content: center;
             align-items: center;
             background: #ffffff;
-            color: #1e8cff;
             overflow: hidden;
             cursor: pointer;
             box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.05);
@@ -83,14 +88,14 @@ export default {
             //     height: 52,
             //     line-height: 52
             // ));
-            @include fontsize(16);
+            // @include fontsize(16);
 
             > span {
                 z-index: 1;
             }
 
             > img {
-                width: 24px;
+                width: 20px;
                 position: relative;
                 left: 12px;
                 transition: all 300ms;
@@ -150,16 +155,16 @@ export default {
             }
         }
     }
-}
-@media screen and (min-width: 851px) and (max-width: 1400px) {
-    .buttonMore.style01,
-    .buttonMore.style02 {
-        width: 180px;
-        height: 62px;
-        box-sizing: border-box;
-        line-height: 52px;
-    }
-}
+// }
+// @media screen and (min-width: 851px) and (max-width: 1400px) {
+//     .buttonMore.style01,
+//     .buttonMore.style02 {
+//         width: 180px;
+//         height: 62px;
+//         box-sizing: border-box;
+//         line-height: 52px;
+//     }
+// }
 // @media screen and (max-width: $__mobile__size) {
 //     @import './styles/ButtonMore/smallScreen.scss';
 // }

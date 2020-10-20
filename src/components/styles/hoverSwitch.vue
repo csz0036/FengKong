@@ -1,5 +1,4 @@
 <template>
-    <!-- todo -->
     <div class="parallel-box">
         <p class="title">{{ title }}</p>
 
@@ -61,13 +60,14 @@ export default {
 
 <style lang="scss" scoped>
 .parallel-box {
-    margin-top: 100px;
+    margin: 100px auto;
+    width: $pc_main_size;
     .hover-box {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         // align-items: center;
-        &.reverse{
+        &.reverse {
             flex-wrap: wrap-reverse;
         }
         &.big {
@@ -84,7 +84,12 @@ export default {
                 font-size: 20px;
             }
             .active {
-                padding: 80px;
+                padding: 60px;
+            }
+        }
+        &.smallPadding {
+            .active {
+                padding: 26px;
             }
         }
     }
@@ -151,6 +156,7 @@ export default {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        word-break: keep-all;
 
         img {
             width: 76px;
