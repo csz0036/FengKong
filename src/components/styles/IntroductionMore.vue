@@ -33,7 +33,6 @@ export default {
     methods: {
         openPage(linkIndex) {
             console.log("linkIndex===========", linkIndex);
-            // todo : 跳转到指定页面
             this.$router.push({
                 path: "/scheme",
                 // hash:'container',

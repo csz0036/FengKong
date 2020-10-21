@@ -38,7 +38,6 @@ export default {
     data() {
         return {};
     },
-    // todo: 多个组件调用 同一个方法，怎么提取？
     methods: {
         Wrap: (origin) => {
             var res = origin.replace(/\\n/gm, "<br>");

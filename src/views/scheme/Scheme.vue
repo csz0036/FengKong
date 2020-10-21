@@ -111,7 +111,7 @@
                 <TopBottom :dataList="scenes_ced.partTwoData"></TopBottom>
 
                 <div class="parallel bg-1">
-                    <h2 class="title title-1">部分偿二代客户名称</h2>
+                    <h2 class="title title-1 cw">部分偿二代客户名称</h2>
                     <ul class="companyList cw">
                         <li>. 中国人寿保险（集团）公司及其下级子公司</li>
                         <li>. 中华联合财产保险股份有限公司</li>
@@ -297,8 +297,7 @@ export default {
                     },
                     {
                         type: "IMG",
-                        // todo: 切图
-                        // imgUrl: require("@/assets/scheme/.png"),
+                        imgUrl: require("@/assets/scheme/tz_img2.png"),
                         imgWidth: "1053",
                     },
                 ],
@@ -411,7 +410,7 @@ export default {
                 ],
                 hoverSwitchList: [
                     {
-                        // todo 缺素材
+                        // todo 缺素材（关联交易）
                         // iconUrl: require("@/assets/scheme/gl_icon1.png"),
                         name: "灵活适用监管规则",
                         datail:
@@ -605,7 +604,7 @@ export default {
                     },
                     {
                         type: "IMG",
-                        imgUrl: require("@/assets/scheme/jr_img1.png"),
+                        imgUrl: require("@/assets/scheme/jr_img2.png"),
                         imgWidth: "993",
                     },
                     {
