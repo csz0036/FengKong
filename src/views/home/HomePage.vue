@@ -2,6 +2,7 @@
     <div class="home">
         <Slider></Slider>
         <!-- banner 文字 -->
+        <div class="banner-box">
             <div class="banner-cont">
                 <p class="intro">
                     重新定义<span class="stress-color"> 数智时代 </span
@@ -16,6 +17,7 @@
                     专注铸就专业，专业赢得信任！<br />企业风控管理信息化领域的领导者！
                 </p>
             </div>
+        </div>
 
         <!-- 风控管理信息化方案特色 -->
         <div class="parallel bg-1">
@@ -66,7 +68,7 @@
                         :key="ind"
                         :subTitle="ite.subTitle"
                         :cont="ite.cont"
-                        :linkIndex = "ind"
+                        :linkIndex="ind"
                     ></IntroductionMore>
                 </template>
             </div>
@@ -237,32 +239,37 @@ export default {
         }
     }
 }
-
-.banner-cont {
+.banner-box {
+    height: 500px;
+    width: 1180px;
     position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     top: 260px;
     z-index: 100;
-    left: 100px;
-    width: 612px;
-    color: #ffffff;
-    letter-spacing: 1px;
-    .intro {
-        font-size: 24px;
-    }
-    .intro-stress {
-        line-height: 88px;
-        font-size: 46px;
-    }
-    .intro-history {
-        font-size: 18px;
-        margin-top: 50px;
-    }
-    .intro-future {
-        margin-top: 10px;
-        font-size: 14px;
-        line-height: 20px;
+    .banner-cont {
+        width: 612px;
+        color: #ffffff;
+        letter-spacing: 1px;
+        .intro {
+            font-size: 24px;
+        }
+        .intro-stress {
+            line-height: 88px;
+            font-size: 46px;
+        }
+        .intro-history {
+            font-size: 18px;
+            margin-top: 50px;
+        }
+        .intro-future {
+            margin-top: 10px;
+            font-size: 14px;
+            line-height: 20px;
+        }
     }
 }
+
 .stress-color {
     color: #ffcc1a;
 }
