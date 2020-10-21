@@ -28,12 +28,12 @@ export default {
         //     default: 1,
         // },
         cloumnWidth: {
-            type: Number,
-            default: 0,
+            type: String,
+            default: "0",
         },
         cloumnHight: {
-            type: Number,
-            default: 90,
+            type: String,
+            default: "90",
         },
         linkList: {
             type: Array,

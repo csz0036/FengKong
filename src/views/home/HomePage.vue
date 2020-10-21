@@ -66,6 +66,7 @@
                         :key="ind"
                         :subTitle="ite.subTitle"
                         :cont="ite.cont"
+                        :linkIndex = "ind"
                     ></IntroductionMore>
                 </template>
             </div>
@@ -77,7 +78,7 @@
             <h2 class="title title-1">经典案例介绍</h2>
             <div class="cont-parallel">
                 <LinkByColumn
-                    :cloumnWidth="cloumnWidth"
+                    cloumnWidth="cloumnWidth"
                     :linkList="linkList"
                 ></LinkByColumn>
             </div>

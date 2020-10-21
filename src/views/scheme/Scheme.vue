@@ -9,7 +9,7 @@
         ></Banner>
         <!-- <div class="cw"> -->
         <!-- 合作方 -->
-        <div class="parallel">
+        <div class="parallel" id="scheme-container">
             <h2 class="title title-1">“四位一体”落地应用场景</h2>
             <Tab :tabList="tabList" @changTab="getChangTab"></Tab>
         </div>
@@ -701,7 +701,23 @@ export default {
     methods: {
         getChangTab(acitveIndex) {
             this.acitveIndex = acitveIndex;
+            console.log("修改acitveIndex",acitveIndex);
         },
+        scrollHack() {
+            document.getElementById("scheme-container").scrollIntoView();
+        },
+    },
+    mounted() {
+        let tabIndex = this.$route.query.tabIndex;
+        if (tabIndex != undefined) {
+            this.$router.push({ query: {} }); // 清除参数
+            this.scrollHack();
+            this.getChangTab(tabIndex);
+
+            // this.$nextTick(()=>{
+            //     this.getChangTab(tabIndex);
+            // })
+        }
     },
 };
 </script>
@@ -739,14 +755,13 @@ export default {
     padding-bottom: 80px;
 }
 .companyList {
-    
-    li{
- display:inline-block;
-    vertical-align: top;
-    width: 33%;
-    text-align: left;
+    li {
+        display: inline-block;
+        vertical-align: top;
+        width: 33%;
+        text-align: left;
     }
-   
+
     font-size: 18px;
     color: #788398;
     line-height: 50px;

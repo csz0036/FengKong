@@ -34,6 +34,11 @@ export default {
         openPage(linkIndex) {
             console.log("linkIndex===========", linkIndex);
             // todo : 跳转到指定页面
+            this.$router.push({
+                path: "/scheme",
+                // hash:'container',
+                query: { tabIndex:  linkIndex},
+            });
         },
     },
 };
@@ -76,9 +81,13 @@ export default {
         text-align: justify;
     }
     .more {
-        position:absolute;
+        position: absolute;
+        display: inline-block;
+        width: 40px;
+        height: 30px;
         bottom: 30px;
         right: 40px;
+        text-align: right;
         font-size: 12px;
         color: #3a80e5;
         letter-spacing: 0;
