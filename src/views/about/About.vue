@@ -171,7 +171,7 @@ export default {
             let scrollData = [];
             for (let i = 0; i < 7; i++) {
                 let elId = "scorll" + i;
-                let elScrollTop = document.getElementById(elId).offsetTop - 540;
+                let elScrollTop = document.getElementById(elId).offsetTop - 960;
                 scrollData.push({ id: elId, start: elScrollTop });
                 // console.log("滚动高度", elId, elScrollTop);
             }

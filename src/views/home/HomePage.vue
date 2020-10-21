@@ -47,7 +47,7 @@
 
         <!-- 风控管理信息化设计思路 -->
         <div class="parallel bg-0">
-            <h2 class="title title-1">风控管理信息化设计思路</h2>
+            <h2 class="title title-1" id="scorll4">风控管理信息化设计思路</h2>
             <div class="cont-parallel" id="contLint">
                 <template v-for="(ite, ind) in contBox2">
                     <Parallel
@@ -58,6 +58,7 @@
                         :imgHeight="ite.style[1]"
                         :position="ite.position"
                         :imgUrl="ite.img"
+                        :id="`scorll${ind + 5}`"
                     >
                     </Parallel>
                 </template>
@@ -66,8 +67,10 @@
 
         <!-- 应用场景 -->
         <div class="parallel bg-1">
-            <h2 class="title title-1">基于“四位一体”的风险管理落地应用场景</h2>
-            <div class="cont-parallel cont-scenes">
+            <h2 class="title title-1" id="scorll7">
+                基于“四位一体”的风险管理落地应用场景
+            </h2>
+            <div class="cont-parallel cont-scenes" id="scorll8">
                 <template v-for="(ite, ind) in IntroductionMore">
                     <IntroductionMore
                         :key="ind"
@@ -209,6 +212,26 @@ export default {
             //         id: "scorll3",
             //         start: "1570",
             //     },
+            //     {
+            //         id: "scorll4",
+            //         start: "2070",
+            //     },
+            //     {
+            //         id: "scorll5",
+            //         start: "2170",
+            //     },
+            //     {
+            //         id: "scorll6",
+            //         start: "2670",
+            //     },
+            //     {
+            //         id: "scorll7",
+            //         start: "3270",
+            //     },
+            //     {
+            //         id: "scorll8",
+            //         start: "3470",
+            //     }
             // ],
         };
     },
@@ -220,16 +243,19 @@ export default {
     methods: {
         initScorllAn() {
             let scrollData = [];
-            for (let i = 0; i < 4; i++) {
+            for (let i = 0; i < 9; i++) {
                 let elId = "scorll" + i;
-                let scrollTop = document.getElementById(elId).offsetTop -500;
+                let scrollTop = document.getElementById(elId).offsetTop - 797;
                 scrollData.push({ id: elId, start: scrollTop });
-                console.log("滚动高度", scrollTop);
+                // console.log("滚动高度", scrollTop);
             }
             scrollData.forEach((val) => {
                 scroll.addEventListener(val);
             });
 
+            // this.scrollElemnt.forEach((val) => {
+            //     scroll.addEventListener(val);
+            // });
         },
     },
 };
@@ -285,11 +311,14 @@ export default {
 #scorll0,
 #scorll1,
 #scorll2,
-#scorll3 {
-    -webkit-transition: all 0.6s ease-in-out;
-    transition: all 0.6s ease-in-out;
+#scorll3,
+#scorll4,
+#scorll5,
+#scorll6,
+#scorll7,
+#scorll8 {
+    transition: all 0.5s ease-in-out;
     opacity: 0;
-    -webkit-transform: translate3D(0, 200%, 0);
     transform: translate3D(0, 200%, 0);
     // position: relative;
     // overflow: hidden;
