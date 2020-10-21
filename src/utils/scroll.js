@@ -1,4 +1,4 @@
-const SCROLL_LIST = {};
+const SCROLL_LIST = [];
 
 let
     clientHeight = 0,
@@ -12,9 +12,11 @@ const scroll = {
 
     addEventListener(params = {}) {
         try {
-            const { id, call } = params;
-
-            SCROLL_LIST[id] = { id, call };
+            const { id, start } = params;
+            SCROLL_LIST.push({
+                ID:id,
+                START:start
+            })
         }
         catch(err) {
             console.log('scroll addEventListener', ...arguments, err);
@@ -43,18 +45,14 @@ const scroll = {
 (function() {
     try {
         window.onresize = scroll.resetClientHeight;
-
         window.onscroll = scroll.throttle(function() {
-            const
-                _scrollTop = document.documentElement.scrollTop || document.body.scrollTop,
-                direction = scrollTop - _scrollTop > 0 ? 1 : -1,
-                scrollBottom = _scrollTop + clientHeight;
-    
-            scrollTop = _scrollTop;
-
-            Array.from(Object.values(SCROLL_LIST), ({ call }) => {
-                call({ scrollTop, scrollBottom, direction });
-            });
+            const  _scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            SCROLL_LIST.forEach( (val) => {
+                if(_scrollTop > val.START){
+                    document.getElementById(val.ID).style.transform = 'translate3D(0,0,0)'
+                }
+            })
+            
         }, 30)
 
         window.ontouchmove = scroll.throttle(function() {

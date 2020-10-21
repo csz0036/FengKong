@@ -72,6 +72,7 @@ import Slider from "@/components/slider";
 import Parallel from "@/components/styles/LeftRight";
 import IntroductionMore from "@/components/styles/IntroductionMore";
 import LinkByColumn from "@/components/styles/LinkByColumn";
+import scroll from "@/utils/scroll";
 export default {
     components: {
         Slider,
@@ -146,15 +147,24 @@ export default {
             cloumnWidth:276,
             scrollElemnt:[
                 {
-
+                    id:'scorll0',
+                    start:'300'
+                },
+                {
+                    id:'scorll1',
+                    start:'600'
                 }
             ]
 
         };
     },
-    mounted() {},
-    created () {
-    }
+    mounted() {
+        this.scrollElemnt.forEach((val) => {
+            scroll.addEventListener(val)
+        })
+       
+    },
+   
 };
 </script>
 
@@ -169,7 +179,7 @@ export default {
     }
 }
 .parallel {
-    overflow: auto;
+    overflow: hidden;;
     .title {
         text-align: center;
         font-size: 26px;
@@ -204,5 +214,9 @@ export default {
             left: 0;
         }
     }
+}
+#scorll0,#scorll1,#scorll2,#scorll3{
+    transition: all ease-in-out .5s;
+    transform: translate3d(0,200px,0);
 }
 </style>
