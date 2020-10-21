@@ -11,8 +11,6 @@
                 <ButtonMore></ButtonMore>
             </div>
         </div>
-
-       
     </div>
 </template>
 
@@ -65,18 +63,17 @@ export default {
 
     .banner-cont {
         width: 420px;
-        padding-left: 100px;
-        padding-top: 90px;
+        padding-left: 110px;
+        padding-top: 86px;
     }
     .en-name {
         font-size: 30px;
         color: #708ee1;
-        letter-spacing: 0;
         line-height: 36px;
-        margin-bottom: 10px;
+        margin-bottom: 6px;
     }
     .cn-name {
-        font-size: 45px;
+        font-size: 43px;
         color: #ffffff;
         line-height: 64px;
         margin-bottom: 28px;
@@ -84,9 +81,8 @@ export default {
     .introduction {
         font-size: 16px;
         color: #ffffff;
-        line-height: 22px;
-        letter-spacing: 0.44px;
-        margin-bottom: 20px;
+        line-height: 20px;
+        margin-bottom: 28px;
     }
 }
 </style>

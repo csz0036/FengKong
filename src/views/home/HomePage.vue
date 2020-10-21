@@ -1,95 +1,108 @@
 <template>
     <div class="home">
-        <Slider></Slider>
-        <!-- banner 文字 -->
-        <div class="banner-box">
-            <div class="banner-cont">
-                <p class="intro">
-                    重新定义<span class="stress-color"> 数智时代 </span
-                    >的风控管理
-                </p>
-                <p class="intro-stress">慧点科技大数据风控解决方案</p>
-                <ButtonMore></ButtonMore>
-                <p class="intro-history stress-color">
-                    十八年坚守耕耘，200+客户共同选择
-                </p>
-                <p class="intro-future">
-                    专注铸就专业，专业赢得信任！<br />企业风控管理信息化领域的领导者！
-                </p>
-            </div>
-        </div>
-
-        <!-- 风控管理信息化方案特色 -->
-        <div class="parallel bg-1">
-            <h2 class="title title-1">风控管理信息化方案特色</h2>
-            <div class="cont-parallel">
-                <div
-                    v-for="(ite, ind) in contBox1"
-                    :key="ind"
-                    :id="`scorll${ind}`"
-                >
-                    <Parallel
-                        :name="ite.name"
-                        :cont="ite.cont"
-                        :imgWidth="ite.style[0]"
-                        :imgHeight="ite.style[1]"
-                        :position="ite.position"
-                        :imgUrl="ite.img"
-                    ></Parallel>
+        <img src="@/assets/preview/页面-1-2-风控首页.png" alt="" class="demo" />
+        <div class="demo-origin">
+            <!-- <Slider></Slider> -->
+            <!-- banner 文字 -->
+            <div class="banner-box">
+                <img
+                    src="@/assets/index/banner0.png"
+                    alt=""
+                    class="banner-img"
+                />
+                <div class="wrap">
+                    <div class="banner-cont">
+                        <p class="intro">
+                            重新定义<span class="stress-color"> 数智时代 </span
+                            >的风控管理
+                        </p>
+                        <p class="intro-stress">慧点科技大数据风控解决方案</p>
+                        <ButtonMore></ButtonMore>
+                        <p class="intro-history stress-color">
+                            十八年坚守耕耘，200+客户共同选择
+                        </p>
+                        <p class="intro-future">
+                            专注铸就专业，专业赢得信任！<br />企业风控管理信息化领域的领导者！
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
+            <div class="demo-origin">
+                <!-- 风控管理信息化方案特色 -->
+                <div class="parallel bg-1">
+                    <h2 class="title title-1">风控管理信息化方案特色</h2>
+                    <div class="cont-parallel">
+                        <div
+                            v-for="(ite, ind) in contBox1"
+                            :key="ind"
+                            :id="`scorll${ind}`"
+                        >
+                            <Parallel
+                                :name="ite.name"
+                                :cont="ite.cont"
+                                :imgWidth="ite.style[0]"
+                                :imgHeight="ite.style[1]"
+                                :position="ite.position"
+                                :imgUrl="ite.img"
+                            ></Parallel>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- 风控管理信息化设计思路 -->
-        <div class="parallel bg-0">
-            <h2 class="title title-1">风控管理信息化设计思路</h2>
-            <div class="cont-parallel" id="contLint">
-                <template v-for="(ite, ind) in contBox2">
-                    <Parallel
-                        :key="ind"
-                        :name="ite.name"
-                        :cont="ite.cont"
-                        :imgWidth="ite.style[0]"
-                        :imgHeight="ite.style[1]"
-                        :position="ite.position"
-                        :imgUrl="ite.img"
-                    >
-                    </Parallel>
-                </template>
-            </div>
-        </div>
+                <!-- 风控管理信息化设计思路 -->
+                <div class="parallel bg-0">
+                    <h2 class="title title-1">风控管理信息化设计思路</h2>
+                    <div class="cont-parallel" id="contLint">
+                        <template v-for="(ite, ind) in contBox2">
+                            <Parallel
+                                :key="ind"
+                                :name="ite.name"
+                                :cont="ite.cont"
+                                :imgWidth="ite.style[0]"
+                                :imgHeight="ite.style[1]"
+                                :position="ite.position"
+                                :imgUrl="ite.img"
+                            >
+                            </Parallel>
+                        </template>
+                    </div>
+                </div>
 
-        <!-- 应用场景 -->
-        <div class="parallel bg-1">
-            <h2 class="title title-1">基于“四位一体”的风险管理落地应用场景</h2>
-            <div class="cont-parallel cont-scenes">
-                <template v-for="(ite, ind) in IntroductionMore">
-                    <IntroductionMore
-                        :key="ind"
-                        :subTitle="ite.subTitle"
-                        :cont="ite.cont"
-                        :linkIndex="ind"
-                    ></IntroductionMore>
-                </template>
-            </div>
-        </div>
+                <!-- 应用场景 -->
+                <div class="parallel bg-1">
+                    <h2 class="title title-1">
+                        基于“四位一体”的风险管理落地应用场景
+                    </h2>
+                    <div class="cont-parallel cont-scenes">
+                        <template v-for="(ite, ind) in IntroductionMore">
+                            <IntroductionMore
+                                :key="ind"
+                                :subTitle="ite.subTitle"
+                                :cont="ite.cont"
+                                :linkIndex="ind"
+                            ></IntroductionMore>
+                        </template>
+                    </div>
+                </div>
 
-        <!-- 经典案例介绍 -->
-        <div class="parallel bg-2">
-            <div class="dividing-line2"></div>
-            <h2 class="title title-1">经典案例介绍</h2>
-            <div class="cont-parallel">
-                <LinkByColumn
-                    cloumnWidth="cloumnWidth"
-                    :linkList="linkList"
-                ></LinkByColumn>
+                <!-- 经典案例介绍 -->
+                <div class="parallel bg-2">
+                    <div class="dividing-line"></div>
+                    <h2 class="title title-1">经典案例介绍</h2>
+                    <div class="cont-parallel">
+                        <LinkByColumn
+                            cloumnWidth="cloumnWidth"
+                            :linkList="linkList"
+                        ></LinkByColumn>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import Slider from "@/components/slider";
+// import Slider from "@/components/slider";
 import Parallel from "@/components/styles/LeftRight";
 import IntroductionMore from "@/components/styles/IntroductionMore";
 import LinkByColumn from "@/components/styles/LinkByColumn";
@@ -97,7 +110,7 @@ import scroll from "@/utils/scroll";
 import ButtonMore from "@/components/styles/ButtonMore";
 export default {
     components: {
-        Slider,
+        // Slider,
         Parallel,
         IntroductionMore,
         LinkByColumn,
@@ -179,28 +192,43 @@ export default {
                         "对接企业财务、费控、合同以及第三方企业信息数据库，筛查疑似关联方，预置银保监、上交所、联交所等规则，智能识别关联交易，基于授信额度自动预警及干预，有效控制关联交易风险。",
                 },
             ],
-            linkList: (new Array(8).fill(1)).map((i, iIndex) => require(`@/assets/links/link${iIndex}.png`)),
-            cloumnWidth:276,
-            scrollElemnt:[
+            linkList: new Array(8)
+                .fill(1)
+                .map((i, iIndex) =>
+                    require(`@/assets/links/link${iIndex}.png`)
+                ),
+            cloumnWidth: 276,
+            scrollElemnt: [
                 {
-                    id:'scorll0',
-                    start:'300'
+                    id: "scorll0",
+                    start: "0",
                 },
                 {
-                    id:'scorll1',
-                    start:'600'
-                }
-            ]
-
+                    id: "scorll1",
+                    start: "600",
+                },
+                {
+                    id: "scorll2",
+                    start: "1030",
+                },
+                {
+                    id: "scorll3",
+                    start: "1570",
+                },
+            ],
         };
     },
     mounted() {
         this.scrollElemnt.forEach((val) => {
-            scroll.addEventListener(val)
-        })
-       
+            scroll.addEventListener(val);
+        });
+        
+        // todo
+        setTimeout(()=>{
+            var a = document.getElementById("scorll3").offsetTop;
+        console.log("a",a);
+        },500)
     },
-   
 };
 </script>
 
@@ -215,7 +243,7 @@ export default {
     }
 }
 .parallel {
-    overflow: hidden;;
+    overflow: hidden;
     .title {
         text-align: center;
         font-size: 26px;
@@ -226,7 +254,7 @@ export default {
         }
     }
     .cont-parallel,
-    .dividing-line2 {
+    .dividing-line {
         width: $pc_main_size;
         margin: 0 auto;
     }
@@ -251,18 +279,39 @@ export default {
         }
     }
 }
-#scorll0,#scorll1,#scorll2,#scorll3{
-    transition: all ease-in-out .5s;
-    transform: translate3d(0,200px,0);
+#scorll0,
+#scorll1,
+#scorll2,
+#scorll3 {
+    -webkit-transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out;
+    opacity: 0;
+    -webkit-transform: translate3D(0, 200%, 0);
+    transform: translate3D(0, 200%, 0);
+    // position: relative;
+    // overflow: hidden;
 }
+
+#scorll0 {
+    .parallel-box {
+        padding: 50px 106px 60px;
+    }
+}
+
 .banner-box {
-    height: 500px;
-    width: 1180px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 260px;
-    z-index: 100;
+    .banner-img {
+        height: 578px;
+        position: absolute;
+        z-index: -1;
+    }
+    .wrap {
+        width: 1180px;
+        top: 180px;
+        margin: 0 auto;
+        height: 578px;
+        padding: 172px 0 0 25px;
+        box-sizing: border-box;
+    }
     .banner-cont {
         width: 612px;
         color: #ffffff;
@@ -273,10 +322,11 @@ export default {
         .intro-stress {
             line-height: 88px;
             font-size: 46px;
+            padding-bottom: 7px;
         }
         .intro-history {
             font-size: 18px;
-            margin-top: 50px;
+            margin-top: 45px;
         }
         .intro-future {
             margin-top: 10px;

@@ -90,7 +90,11 @@ export default {
     height: 80px;
 }
 #menu {
+    position: fixed;
     width: 100%;
+    span{
+        font-weight: 400 ;
+    }
     .menu_logo {
         flex: 1;
         img {
@@ -112,19 +116,35 @@ export default {
             font-size: 16px;
             color: #5d749f;
             margin-right: 40px;
+            position: relative;
             cursor: pointer;
-            &.active {
-                color: #2970d5;
-                position: relative;
-                &::after {
+               transition: color 0.3s;
+             &::after {
                     content: "";
-                    width: 100%;
+                    // width: 100%;
                     height: 3px;
                     position: absolute;
                     background: #2970d5;
                     border-radius: 3px;
                     bottom: -10px;
                     left: 0;
+                     left: 50%;
+                    transform: translateX(-50%);
+                    transition: width 0.2s;
+            width: 0%;
+                }
+            &.active {
+                color: #2970d5;
+                position: relative;
+                &::after {
+                    // content: "";
+                    width: 100%;
+                    // height: 3px;
+                    // position: absolute;
+                    // background: #2970d5;
+                    // border-radius: 3px;
+                    // bottom: -10px;
+                    // left: 0;
                 }
             }
         }

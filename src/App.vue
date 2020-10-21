@@ -3,14 +3,14 @@
         <!-- 菜单 -->
         <Menu />
         <!-- 内容 -->
-        <router-view/>
+        <router-view class="main-container" />
         <!-- 页脚 -->
         <Footer />
     </div>
 </template>
 
 <script>
-import Menu from '@/components/Menu';
+import Menu from "@/components/Menu";
 import Footer from '@/components/Footer';
 
 export default {
@@ -18,20 +18,20 @@ export default {
         Menu,
         Footer
     },
-    data(){
-        return{
-        }
+    data() {
+        return {};
     },
     created() {
         // 初始化
-   
     },
-    methods: {
-        
-    }
-}
+    methods: {},
+};
 </script>
 
 <style lang="scss">
-
+#app {
+    .main-container {
+        padding-top: 80px;
+    }
+}
 </style>

@@ -70,7 +70,6 @@ export default {
             line-height: 62px;
             box-sizing: border-box;
             color: #1497fb;
-            line-height: 22px;
             position: relative;
             display: inline-flex;
             justify-content: center;

@@ -17,6 +17,8 @@ time, mark, audio, video {
     font-size:100%;
     vertical-align:baseline;
     background:transparent;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Segoe UI","Helvetica Neue","PingFang SC","Noto Sans","Noto Sans CJK SC","Microsoft YaHei",微软雅黑,sans-serif;
+    font-weight: 300;
 }
 body{
     background-color: #f7fafc;
@@ -96,11 +98,28 @@ $pc_main_size: 1180px;
 .dividing-line{
     height: 0;
     width: 100%;
-    border: 1px solid rgba(120,131,152,0.20);
-}
-.dividing-line2{
-    height: 0;
-    width: 100%;
-    border: 1px solid #E4E4E4;
+    border: 1px solid rgba(120,131,152,0.10);
 }
 
+// todo
+
+.demo{
+    position: absolute;
+    width: 1920px;
+    z-index: -1;
+    top: 0px;
+    opacity: 0;
+
+}
+.demo-origin{
+    position: relative;
+    // opacity: 0.5;
+    // opacity: 0;
+    z-index: 101;
+}
+// .demo,
+// .demo-origin{
+//     // position: absolute;
+//     // top: 0;
+//     // left: 0;
+// }

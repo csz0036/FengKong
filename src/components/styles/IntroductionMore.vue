@@ -1,9 +1,9 @@
 <template>
     <!-- 简介 去往详情 -->
-    <div class="introduction-box">
+    <div class="introduction-box" @click="openPage(linkIndex)">
         <p class="sub-title">{{ subTitle }}</p>
         <p class="cont">{{ cont }}</p>
-        <a class="more" @click="openPage(linkIndex)">更多></a>
+        <span class="more">更多></span>
     </div>
 </template>
 
@@ -32,11 +32,11 @@ export default {
 
     methods: {
         openPage(linkIndex) {
-            console.log("linkIndex===========", linkIndex);
+            // console.log("linkIndex===========", linkIndex);
             this.$router.push({
                 path: "/scheme",
                 // hash:'container',
-                query: { tabIndex:  linkIndex},
+                query: { tabIndex: linkIndex },
             });
         },
     },
@@ -45,6 +45,7 @@ export default {
 
 <style lang="scss" scoped>
 .introduction-box {
+     cursor: pointer;
     position: relative;
     background-color: #fff;
     display: inline-block;
@@ -56,6 +57,14 @@ export default {
     width: 210px;
     height: 288px;
     margin-right: 20px;
+    -webkit-transition: .3s all ease-in-out;
+    transition: .3s all ease-in-out;
+    &:hover {
+        // -webkit-box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.05);
+        // box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.05);
+        -webkit-transform: translateY(-8px);
+        transform: translateY(-8px);
+    }
     .sub-title {
         font-size: 18px;
         color: #14202b;
@@ -91,7 +100,7 @@ export default {
         color: #3a80e5;
         letter-spacing: 0;
         line-height: 14px;
-        cursor: pointer;
+       
     }
 }
 </style>

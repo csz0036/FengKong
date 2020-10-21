@@ -14,7 +14,7 @@
             </div>
         </div>
 
-        <p class ="desc" :class="{ active: showDecs }">部分客户，排名不分先后</p>
+        <p class="desc" :class="{ active: showDecs }">部分客户，排名不分先后</p>
     </div>
 </template>
 
@@ -38,7 +38,7 @@ export default {
         linkList: {
             type: Array,
             default: () => {
-                return []
+                return [];
             },
         },
         showDecs: {
@@ -58,14 +58,19 @@ export default {
 <style lang="scss" scoped>
 .link-box {
     padding-bottom: 60px;
-    .cont{
+    .cont {
         display: flex;
-    flex-wrap: wrap;
+        flex-wrap: wrap;
     }
-    
+
     .item {
         flex: 1;
         margin-bottom: 30px;
+        transition: transform 0.3s;
+        &:hover{
+            transform: scale(1.1);
+            -webkit-transform: scale(1.1);
+        }
     }
 
     .desc {

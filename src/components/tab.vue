@@ -40,6 +40,9 @@ export default {
             this.isActive = index;
             this.$emit("changTab", index);
         },
+        changeActive(index) {
+            this.isActive = index;
+        },
     },
 };
 </script>
@@ -58,8 +61,8 @@ export default {
         color: #5d749f;
         margin-right: 40px;
         cursor: pointer;
-         transition: color .3s;
-         position: relative;
+        transition: color 0.3s;
+        position: relative;
         &::after {
             content: "";
             height: 3px;
@@ -70,7 +73,7 @@ export default {
             left: 50%;
             transform: translateX(-50%);
             width: 0%;
-            transition: width .3s;
+            transition: width 0.3s;
         }
 
         &.active {

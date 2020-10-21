@@ -1,17 +1,19 @@
 <template>
     <!-- 风控案例 -->
     <div class="scheme">
+        <!-- todo 需要删除 -->
+        <img src="@/assets/preview/页面-1-5-专项方案-合同履约风险.png" alt="" class="demo">
+        <div class="demo-origin">
         <Banner
             enName="Special scheme"
             cnName="专项方案"
             introduction="“四位一体”落地的具体应用场景"
             :bg="bannerBg"
         ></Banner>
-        <!-- <div class="cw"> -->
         <!-- 合作方 -->
         <div class="parallel" id="scheme-container">
             <h2 class="title title-1">“四位一体”落地应用场景</h2>
-            <Tab :tabList="tabList" @changTab="getChangTab"></Tab>
+            <Tab :tabList="tabList" @changTab="getChangTab" ref="Tab"></Tab>
         </div>
 
         <div class="tab-cont">
@@ -150,7 +152,7 @@
                 </div>
             </div>
         </div>
-        <!-- </div> -->
+        </div>
     </div>
 </template>
 
@@ -410,8 +412,7 @@ export default {
                 ],
                 hoverSwitchList: [
                     {
-                        // todo 缺素材（关联交易）
-                        // iconUrl: require("@/assets/scheme/gl_icon1.png"),
+                        iconUrl: require("@/assets/scheme/gl_icon1.png"),
                         name: "灵活适用监管规则",
                         datail:
                             "通过规则引擎将银保监会、内地交易所、联交所监管规则通进行数据封装，形成标准化的服务接口，便于规则的统一管理和维护，同时易于调用，提升数据运算效率，进而强化对关联交易的实时、动态预警效果。",
@@ -425,8 +426,6 @@ export default {
                     {
                         iconUrl: require("@/assets/scheme/gl_icon3.png"),
                         name: "关联交易数据中台",
-                        // todo: 文档写的是下面那个
-                        // 数据统一服务业务
                         datail:
                             "根据关联交易相关业务规范统一关联方主数据及元数据，对业务数据按照业务类型进行分类存储，比如授信类业务、非授信类业务等，对数据进行标记，归类，按照不同的数据类型归类存储，对数据使用及调用过程进行记录和跟踪，灵活设置数据访问权限，保障关联交易数据的标准化、统一化。",
                     },
@@ -699,8 +698,7 @@ export default {
     },
     methods: {
         getChangTab(acitveIndex) {
-            this.acitveIndex = acitveIndex;
-            console.log("修改acitveIndex",acitveIndex);
+            this.acitveIndex = parseInt(acitveIndex);
         },
         scrollHack() {
             document.getElementById("scheme-container").scrollIntoView();
@@ -712,10 +710,7 @@ export default {
             this.$router.push({ query: {} }); // 清除参数
             this.scrollHack();
             this.getChangTab(tabIndex);
-
-            // this.$nextTick(()=>{
-            //     this.getChangTab(tabIndex);
-            // })
+            this.$refs.Tab.changeActive(parseInt(tabIndex));
         }
     },
 };
