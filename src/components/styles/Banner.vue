@@ -49,7 +49,7 @@ export default {
 
     methods: {
         Wrap: (origin) => {
-            console.log(origin);
+            // console.log(origin);
             var res = origin.replace(/\\n/gm, "<br>");
             return res;
         },

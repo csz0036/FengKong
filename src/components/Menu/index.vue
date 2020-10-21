@@ -54,19 +54,33 @@ export default {
                     path: "/scheme",
                 },
             ],
-            isActive: 0, // 选中
+            isActive: -1, // 选中
         };
     },
 
     created() {},
-
     methods: {
+        getPath() {
+            let curPath = this.$route.path;
+            // console.log("路由------", this.$route);
+
+            // menu tab重置
+            for (let i = this.nav.length - 1; i >= 0; i--) {
+                if (this.nav[i].path == curPath) {
+                    this.isActive = i;
+                    break;
+                }
+            }
+        },
         openPage(path, index) {
             this.isActive = index;
             if (this.$route.fullPath !== path) {
                 this.$router.push(path);
             }
         },
+    },
+    watch: {
+        $route: "getPath",
     },
 };
 </script>
@@ -89,7 +103,7 @@ export default {
         color: #333333;
     }
     .menu_nav {
-        ul{
+        ul {
             overflow: visible;
             display: inline-block;
         }

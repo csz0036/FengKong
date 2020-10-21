@@ -117,7 +117,7 @@
             <LinkByColumn
                 cloumnWidth="1094"
                 cloumnHight="422"
-                showDecs="true"
+                :showDecs="true"
                 :linkList="linkList"
             ></LinkByColumn>
         </div>

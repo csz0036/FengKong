@@ -30,9 +30,6 @@ const routes = [
         name: 'Scheme',
         component: () => import(/* webpackChunkName: "scheme" */ '@/views/scheme/Scheme')
     },
-    // todo: 页面刷新，那个下标有点问题
-
-
 ];
 
 const router = new VueRouter({
