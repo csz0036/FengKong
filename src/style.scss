@@ -21,7 +21,7 @@ time, mark, audio, video {
     font-weight: 300;
 }
 body{
-    background-color: #f7fafc;
+    background-color: #f7fafc;   
 }
 article,aside,details,figcaption,figure,
 footer,header,hgroup,menu,nav,section { 
@@ -100,26 +100,8 @@ $pc_main_size: 1180px;
     width: 100%;
     border: 1px solid rgba(120,131,152,0.10);
 }
-
-// todo
-
-.demo{
-    position: absolute;
-    width: 1920px;
-    z-index: -1;
-    top: 0px;
-    opacity: 0;
-
+.dividing-line2{
+    height: 0;
+    width: 100%;
+    border:  1px solid rgba(120,131,152,0.20);
 }
-.demo-origin{
-    position: relative;
-    // opacity: 0.5;
-    // opacity: 0;
-    z-index: 101;
-}
-// .demo,
-// .demo-origin{
-//     // position: absolute;
-//     // top: 0;
-//     // left: 0;
-// }

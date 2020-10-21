@@ -15,7 +15,9 @@
                 <img :src="i.imgUrl" :style="{ width: i.imgWidth + 'px' }" />
             </div>
 
-            <p class="title" v-else-if="i.type === 'TITLE'">{{ i.title }}</p>
+            <p :class="`title ${i.class}`" v-else-if="i.type === 'TITLE'">
+                {{ i.title }}
+            </p>
 
             <div class="sub-title" v-else>{{ i.subTtitle }}</div>
         </div>
@@ -52,7 +54,8 @@ export default {
     margin: 100px auto;
     width: $pc_main_size;
     .title {
-        font-size: 26px;
+        font-size: 24px;
+        line-height: 24px;
         color: #050e29;
         // margin-bottom: 20px;
         position: relative;
@@ -85,13 +88,27 @@ export default {
         // margin-bottom: 50px;
     }
 
-    .sub-title,
-    .title,
-    .img{
+    .title {
+        //   padding-top: 40px;
+        margin-top: 30px;
+        &.superHeight {
+            margin-top: 84px;
+        }
+        &.superMiddle {
+            margin-top:70px;
+        }
+    }
+
+    .sub-title {
         margin-top: 30px;
     }
+    // .title,
+    .img {
+        margin-top: 60px;
+        padding-bottom: 20px;
+    }
     .cont {
-        margin-top: 20px;
+        margin-top: 30px;
     }
 }
 </style>

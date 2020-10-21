@@ -1,159 +1,157 @@
 <template>
     <!-- 风控案例 -->
     <div class="scheme">
-        <!-- todo 需要删除 -->
-        <img src="@/assets/preview/页面-1-5-专项方案-合同履约风险.png" alt="" class="demo">
-        <div class="demo-origin">
-        <Banner
-            enName="Special scheme"
-            cnName="专项方案"
-            introduction="“四位一体”落地的具体应用场景"
-            :bg="bannerBg"
-        ></Banner>
-        <!-- 合作方 -->
-        <div class="parallel" id="scheme-container">
-            <h2 class="title title-1">“四位一体”落地应用场景</h2>
-            <Tab :tabList="tabList" @changTab="getChangTab" ref="Tab"></Tab>
-        </div>
+            <Banner
+                enName="Special scheme"
+                cnName="专项方案"
+                introduction="“四位一体”落地的具体应用场景"
+                :bg="bannerBg"
+            ></Banner>
+            <!-- 合作方 -->
+            <div class="parallel" id="scheme-container">
+                <h2 class="title title-1">“四位一体”落地应用场景</h2>
+                <Tab :tabList="tabList" @changTab="getChangTab" ref="Tab"></Tab>
+            </div>
 
-        <div class="tab-cont">
-            <div class="scenes_ht" v-show="acitveIndex == 0">
-                <TopBottom :dataList="scenes_ht.partOneData"></TopBottom>
+            <div class="tab-cont">
+                <div class="scenes_ht" v-show="acitveIndex == 0">
+                    <TopBottom :dataList="scenes_ht.partOneData"></TopBottom>
 
-                <div class="focus-box cw">
-                    <p class="focus color-1">合同全生命周期监控预警</p>
-                    <p>
-                        <span class="color-1">签订前：</span
-                        >对于外部大数据，开展相对方信用风险评估，合同申报合规性审查；
-                    </p>
-                    <p>
-                        <span class="color-1">签订中：</span
-                        >合同文本条款风险提示，利用规则引擎自动判断是否符合内控要求；
-                    </p>
-                    <p>
-                        <span class="color-1">履行中：</span
-                        >相对方动态风险监控，依托智能分析服务设计风控指标和预警等级，自动预警履约风险。
-                    </p>
-                    <p class="focus color-1">在合同场景中的风险管控要求</p>
-                    <img
-                        src="@/assets/scheme/scenes1Img2.png"
-                        alt=""
-                        style="width: 1142px"
-                    />
+                    <div class="focus-box cw">
+                        <p class="focus color-1 focus1">
+                            合同全生命周期监控预警
+                        </p>
+                        <p>
+                            <span class="color-1">签订前：</span
+                            >对于外部大数据，开展相对方信用风险评估，合同申报合规性审查；
+                        </p>
+                        <p>
+                            <span class="color-1">签订中：</span
+                            >合同文本条款风险提示，利用规则引擎自动判断是否符合内控要求；
+                        </p>
+                        <p>
+                            <span class="color-1">履行中：</span
+                            >相对方动态风险监控，依托智能分析服务设计风控指标和预警等级，自动预警履约风险。
+                        </p>
+                        <p class="focus color-1">在合同场景中的风险管控要求</p>
+                        <img
+                            src="@/assets/scheme/scenes1Img2.png"
+                            alt=""
+                            style="width: 1142px"
+                        />
+                    </div>
+
+                    <HoverSwitch
+                        title="价值"
+                        :dataList="scenes_ht.hoverSwitchList"
+                    ></HoverSwitch>
+
+                    <TopBottom :dataList="scenes_ht.partTwoData"></TopBottom>
                 </div>
+                <div class="scenes_zt" v-show="acitveIndex == 1">
+                    <TopBottom :dataList="scenes_zt.partOneData"></TopBottom>
 
-                <HoverSwitch
-                    title="价值"
-                    :dataList="scenes_ht.hoverSwitchList"
-                ></HoverSwitch>
+                    <HoverSwitch
+                        title="价值"
+                        size="big"
+                        :dataList="scenes_zt.hoverSwitchList"
+                    ></HoverSwitch>
 
-                <TopBottom :dataList="scenes_ht.partTwoData"></TopBottom>
-            </div>
-            <div class="scenes_zt" v-show="acitveIndex == 1">
-                <TopBottom :dataList="scenes_zt.partOneData"></TopBottom>
+                    <TopBottom :dataList="scenes_zt.partTwoData"></TopBottom>
+                </div>
+                <div class="scenes_cg" v-show="acitveIndex == 2">
+                    <TopBottom :dataList="scenes_cg.partOneData"></TopBottom>
 
-                <HoverSwitch
-                    title="价值"
-                    size="big"
-                    :dataList="scenes_zt.hoverSwitchList"
-                ></HoverSwitch>
+                    <HoverSwitch
+                        title="价值"
+                        size="reverse"
+                        :dataList="scenes_cg.hoverSwitchList"
+                    ></HoverSwitch>
 
-                <TopBottom :dataList="scenes_zt.partTwoData"></TopBottom>
-            </div>
-            <div class="scenes_cg" v-show="acitveIndex == 2">
-                <TopBottom :dataList="scenes_cg.partOneData"></TopBottom>
+                    <TopBottom :dataList="scenes_cg.partTwoData"></TopBottom>
+                </div>
+                <div class="scenes_gl" v-show="acitveIndex == 3">
+                    <TopBottom :dataList="scenes_gl.partOneData"></TopBottom>
 
-                <HoverSwitch
-                    title="价值"
-                    size="reverse"
-                    :dataList="scenes_cg.hoverSwitchList"
-                ></HoverSwitch>
+                    <HoverSwitch
+                        title="价值"
+                        size="smallPadding"
+                        :dataList="scenes_gl.hoverSwitchList"
+                    ></HoverSwitch>
 
-                <TopBottom :dataList="scenes_cg.partTwoData"></TopBottom>
-            </div>
-            <div class="scenes_gl" v-show="acitveIndex == 3">
-                <TopBottom :dataList="scenes_gl.partOneData"></TopBottom>
+                    <TopBottom :dataList="scenes_gl.partTwoData"></TopBottom>
+                </div>
+                <div class="scenes_jr" v-show="acitveIndex == 4">
+                    <TopBottom :dataList="scenes_jr.partOneData"></TopBottom>
 
-                <HoverSwitch
-                    title="价值"
-                    size="smallPadding"
-                    :dataList="scenes_gl.hoverSwitchList"
-                ></HoverSwitch>
+                    <HoverSwitch
+                        title="价值"
+                        :dataList="scenes_jr.hoverSwitchList"
+                    ></HoverSwitch>
 
-                <TopBottom :dataList="scenes_gl.partTwoData"></TopBottom>
-            </div>
-            <div class="scenes_jr" v-show="acitveIndex == 4">
-                <TopBottom :dataList="scenes_jr.partOneData"></TopBottom>
+                    <TopBottom :dataList="scenes_jr.partTwoData"></TopBottom>
+                </div>
+                <div class="scenes_hg" v-show="acitveIndex == 5">
+                    <TopBottom :dataList="scenes_hg.partOneData"></TopBottom>
 
-                <HoverSwitch
-                    title="价值"
-                    :dataList="scenes_jr.hoverSwitchList"
-                ></HoverSwitch>
+                    <HoverSwitch
+                        title="价值"
+                        :dataList="scenes_hg.hoverSwitchList"
+                    ></HoverSwitch>
 
-                <TopBottom :dataList="scenes_jr.partTwoData"></TopBottom>
-            </div>
-            <div class="scenes_hg" v-show="acitveIndex == 5">
-                <TopBottom :dataList="scenes_hg.partOneData"></TopBottom>
+                    <TopBottom :dataList="scenes_hg.partTwoData"></TopBottom>
+                </div>
+                <div class="scenes_ced" v-show="acitveIndex == 6">
+                    <TopBottom :dataList="scenes_ced.partOneData"></TopBottom>
 
-                <HoverSwitch
-                    title="价值"
-                    :dataList="scenes_hg.hoverSwitchList"
-                ></HoverSwitch>
+                    <HoverSwitch
+                        title="价值"
+                        :dataList="scenes_ced.hoverSwitchList"
+                    ></HoverSwitch>
 
-                <TopBottom :dataList="scenes_hg.partTwoData"></TopBottom>
-            </div>
-            <div class="scenes_ced" v-show="acitveIndex == 6">
-                <TopBottom :dataList="scenes_ced.partOneData"></TopBottom>
+                    <TopBottom :dataList="scenes_ced.partTwoData"></TopBottom>
 
-                <HoverSwitch
-                    title="价值"
-                    :dataList="scenes_ced.hoverSwitchList"
-                ></HoverSwitch>
-
-                <TopBottom :dataList="scenes_ced.partTwoData"></TopBottom>
-
-                <div class="parallel bg-1">
-                    <h2 class="title title-1 cw">部分偿二代客户名称</h2>
-                    <ul class="companyList cw">
-                        <li>. 中国人寿保险（集团）公司及其下级子公司</li>
-                        <li>. 中华联合财产保险股份有限公司</li>
-                        <li>. 泰康保险集团股份有限公司及其下级子公司</li>
-                        <li>. 华泰保险集团股份有限公司及其下级子公司</li>
-                        <li>. 中华联合人寿保险股份有限公司</li>
-                        <li>. 阳光人寿保险股份有限公司</li>
-                        <li>. 阳光信用保证保险股份有限公司</li>
-                        <li>. 中邮人寿保险股份有限公司</li>
-                        <li>. 新华人寿保险股份有限公司</li>
-                        <li>. 和泰人寿保险股份有限公司</li>
-                        <li>. 英大泰和人寿保险股份有限公司</li>
-                        <li>. 英大泰和财产保险股份有限公司</li>
-                        <li>. 光大永明人寿保险有限公司</li>
-                        <li>. 中意财产保险有限公司</li>
-                        <li>. 中美联泰大都会人寿保险有限公司</li>
-                        <li>. 中国出口信用保险公司</li>
-                        <li>. 信泰人寿保险股份有限公司</li>
-                        <li>. 信美人寿相互保险社</li>
-                        <li>. 北京人寿保险股份有限公司</li>
-                        <li>. 中银三星人寿保险有限公司</li>
-                        <li>. 民生人寿保险股份有限公司</li>
-                        <li>. 利安人寿保险股份有限公司</li>
-                        <li>. 招商信诺人寿保险有限公司</li>
-                        <li>. 众安在线财产保险股份有限公司</li>
-                        <li>. 交银康联人寿保险有限公司</li>
-                        <li>. 国泰财产保险有限责任公司</li>
-                        <li>. 浙商财产保险股份有限公司</li>
-                        <li>. 东海航运保险股份有限公司</li>
-                        <li>. 国元农业保险股份有限公司</li>
-                        <li>. 诚泰财产保险股份有限公司</li>
-                        <li>. 鼎和财产保险股份有限公司</li>
-                        <li>. 华安财产保险股份有限公司</li>
-                        <li>. 北部湾财产保险股份有限公司</li>
-                    </ul>
+                    <div class="parallel bg-1">
+                        <h2 class="title title-1 cw">部分偿二代客户名称</h2>
+                        <ul class="companyList cw">
+                            <li>中国人寿保险（集团）公司及其下级子公司</li>
+                            <li>中华联合财产保险股份有限公司</li>
+                            <li>泰康保险集团股份有限公司及其下级子公司</li>
+                            <li>华泰保险集团股份有限公司及其下级子公司</li>
+                            <li>中华联合人寿保险股份有限公司</li>
+                            <li>阳光人寿保险股份有限公司</li>
+                            <li>阳光信用保证保险股份有限公司</li>
+                            <li>中邮人寿保险股份有限公司</li>
+                            <li>新华人寿保险股份有限公司</li>
+                            <li>和泰人寿保险股份有限公司</li>
+                            <li>英大泰和人寿保险股份有限公司</li>
+                            <li>英大泰和财产保险股份有限公司</li>
+                            <li>光大永明人寿保险有限公司</li>
+                            <li>中意财产保险有限公司</li>
+                            <li>中美联泰大都会人寿保险有限公司</li>
+                            <li>中国出口信用保险公司</li>
+                            <li>信泰人寿保险股份有限公司</li>
+                            <li>信美人寿相互保险社</li>
+                            <li>北京人寿保险股份有限公司</li>
+                            <li>中银三星人寿保险有限公司</li>
+                            <li>民生人寿保险股份有限公司</li>
+                            <li>利安人寿保险股份有限公司</li>
+                            <li>招商信诺人寿保险有限公司</li>
+                            <li>众安在线财产保险股份有限公司</li>
+                            <li>交银康联人寿保险有限公司</li>
+                            <li>国泰财产保险有限责任公司</li>
+                            <li>浙商财产保险股份有限公司</li>
+                            <li>东海航运保险股份有限公司</li>
+                            <li>国元农业保险股份有限公司</li>
+                            <li>诚泰财产保险股份有限公司</li>
+                            <li>鼎和财产保险股份有限公司</li>
+                            <li>华安财产保险股份有限公司</li>
+                            <li>北部湾财产保险股份有限公司</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-        </div>
-    </div>
 </template>
 
 <script>
@@ -172,12 +170,12 @@ export default {
 
     data() {
         return {
-            bannerBg: require("@/assets/scheme/banner.png"),
+            bannerBg: require("@/assets/scheme/banner.jpg"),
             tabList: [
                 "合同履约风险",
                 "投资风险管理",
                 "采购风险管理",
-                "关联交易",
+                "关联交易管理",
                 "金融领域投资",
                 "合规管理",
                 "偿二代-保险",
@@ -224,6 +222,10 @@ export default {
                         conts: ["中国石油合同管理系统2.0项目智能应用软件"],
                     },
                     {
+                        type: "SUBTITLE",
+                        subTtitle: "中国石油合同管理系统2.0项目智能应用软件",
+                    },
+                    {
                         type: "CONT",
                         conts: [
                             "1. 建设合同风险管理，将合同全生命周期的风险防控措施固化到系统中，对风险进行及时预警和管控；",
@@ -264,19 +266,19 @@ export default {
                         iconUrl: require("@/assets/scheme/tz_icon1.png"),
                         name: "流程合规化",
                         datail:
-                            "达到投资项目流程合规化的目标，通过对投资业务流程信息化的管理，将业务管理过程标准固化，一方面能保证业务过程的合规，一方面也可以提高业务运转的效率。",
+                            "达到投资项目流程合规化的目标，通过对投资业务流程信息化的管理，将业务管理过程标准固化，一方面能保证业务过程的合规，一方面也可以提高业务运转的效率",
                     },
                     {
                         iconUrl: require("@/assets/scheme/tz_icon2.png"),
                         name: "项目信息一体化",
                         datail:
-                            "“项目信息一体化”是从项目管理的全局出发，实现从项目的采集、项目的立项、管理、投资后评价的全过程管理，保证信息的完整性、元数据结构的一致性。",
+                            "“项目信息一体化”是从项目管理的全局出发，实现从项目的采集、项目的立项、管理、投资后评价的全过程管理，保证信息的完整性、元数据结构的一致性",
                     },
                     {
                         iconUrl: require("@/assets/scheme/tz_icon3.png"),
                         name: "统计标准化",
                         datail:
-                            "“统计标准化”是为了使统计工作能够及时、准确地反映企业投资情况，实现其服务、监督的管理职能，既能节省同类报表的重复填报量、提高工作效率，也能为业务部门、相关领导提供投资业务的数据分析，把握总体投资概况，统筹安排后续工作。",
+                            "“统计标准化”是为了使统计工作能够及时、准确地反映企业投资情况，实现其服务、监督的管理职能，既能节省同类报表的重复填报量、提高工作效率，也能为业务部门、相关领导提供投资业务的数据分析，把握总体投资概况，统筹安排后续工作",
                     },
                     {
                         iconUrl: require("@/assets/scheme/tz_icon4.png"),
@@ -332,32 +334,32 @@ export default {
                         iconUrl: require("@/assets/scheme/cg_icon3.png"),
                         name: "风险防控",
                         datail:
-                            "通过规则引擎的设置，将采购业务的内控、风险、合规等管理规范预置在系统中，通过业务流程和数据分析相结合的方式预警采购风险。",
+                            "通过规则引擎的设置，将采购业务的内控、风险、合规等管理规范预置在系统中，通过业务流程和数据分析相结合的方式预警采购风险",
                     },
                     {
                         iconUrl: require("@/assets/scheme/cg_icon4.png"),
                         name: "数据分析",
                         datail:
-                            "积累和挖掘采购数据价值，利用大数据和智能化对采购数据分析和预测，对企业经营决策提供支撑。",
+                            "积累和挖掘采购数据价值，利用大数据和智能化对采购数据分析和预测，对企业经营决策提供支撑",
                     },
 
                     {
                         iconUrl: require("@/assets/scheme/cg_icon5.png"),
                         name: "阳光采购",
                         datail:
-                            "实现采购全流程风险控制的监督平台和公开透明的阳光采购平台，遵循公开、公平、公正和诚实信用原则。",
+                            "实现采购全流程风险控制的监督平台和公开透明的阳光采购平台，遵循公开、公平、公正和诚实信用原则",
                     },
                     {
                         iconUrl: require("@/assets/scheme/cg_icon1.png"),
                         name: "采购一体化",
                         datail:
-                            "实现从预算、采购计划、采购立项、供应商准入、招财过程、合同管理、采购执行和采购归档的全过程数字化采购。",
+                            "实现从预算、采购计划、采购立项、供应商准入、招财过程、合同管理、采购执行和采购归档的全过程数字化采购",
                     },
                     {
                         iconUrl: require("@/assets/scheme/cg_icon2.png"),
                         name: "集中管控",
                         datail:
-                            "建立统一的集采目录和管控标准，实现集中采购和分散授权采购相结合的采购模式。",
+                            "建立统一的集采目录和管控标准，实现集中采购和分散授权采购相结合的采购模式",
                     },
                 ],
                 partTwoData: [
@@ -390,13 +392,12 @@ export default {
                         conts: [
                             "关联交易，是企业关联方之间的交易，是上市公司日常交易中特殊的交易，在市场经济条件下广为存在。随着业务发展、战略投资者增加，其股权渐呈多元化状态，关联交易管理作为日常管理核心内容之一显得愈发重要，日渐增多的关联交易行为将会给企业带来管理风险。",
                             "关联交易管理信息系统提供了关联方管理、关联交易录入、事前筛选、事后预警和报告报表管理等功能。",
-                            "从供应商管理、采购管理、电子招投标管理、电子合同签署、采购执行跟踪、采购归档、采购风险的全程电子化采购管理。",
                         ],
                     },
                     {
                         type: "IMG",
                         imgUrl: require("@/assets/scheme/gl_img1.png"),
-                        imgWidth: "1053",
+                        imgWidth: "950",
                     },
                     {
                         type: "CONT",
@@ -415,19 +416,19 @@ export default {
                         iconUrl: require("@/assets/scheme/gl_icon1.png"),
                         name: "灵活适用监管规则",
                         datail:
-                            "通过规则引擎将银保监会、内地交易所、联交所监管规则通进行数据封装，形成标准化的服务接口，便于规则的统一管理和维护，同时易于调用，提升数据运算效率，进而强化对关联交易的实时、动态预警效果。",
+                            "通过规则引擎将银保监会、内地交易所、联交所监管规则通进行数据封装，形成标准化的服务接口，便于规则的统一管理和维护，同时易于调用，提升数据运算效率，进而强化对关联交易的实时、动态预警效果",
                     },
                     {
                         iconUrl: require("@/assets/scheme/gl_icon2.png"),
                         name: "关联交易全流程管控",
                         datail:
-                            "通过信息系统的实施，实现关联交易全过程信息化管理，灵活配置审批流程，审批流程可追踪，可留痕；覆盖关联交易事前、事中和事后管理。",
+                            "通过信息系统的实施，实现关联交易全过程信息化管理，灵活配置审批流程，审批流程可追踪，可留痕；覆盖关联交易事前、事中和事后管理",
                     },
                     {
                         iconUrl: require("@/assets/scheme/gl_icon3.png"),
                         name: "关联交易数据中台",
                         datail:
-                            "根据关联交易相关业务规范统一关联方主数据及元数据，对业务数据按照业务类型进行分类存储，比如授信类业务、非授信类业务等，对数据进行标记，归类，按照不同的数据类型归类存储，对数据使用及调用过程进行记录和跟踪，灵活设置数据访问权限，保障关联交易数据的标准化、统一化。",
+                            "根据关联交易相关业务规范统一关联方主数据及元数据，对业务数据按照业务类型进行分类存储，比如授信类业务、非授信类业务等，对数据进行标记，归类，按照不同的数据类型归类存储，对数据使用及调用过程进行记录和跟踪，灵活设置数据访问权限，保障关联交易数据的标准化、统一化",
                     },
                 ],
                 partTwoData: [
@@ -439,8 +440,8 @@ export default {
                             "西部机场集团作为全国第二大跨省运营的集团化管理机场集团，每年集中采购的数量和金额巨大，供应商、代理商、采购流程等管理相对分散、业务流程无法贯穿、数据无法共享；通过建设采购管理信息化平台规范采购流程、建立采购数据标准、实现内部用户与外部供应商/代理机构的数字化协同，打造阳光采购工程。",
                             "作为一家快速发展的新型商业银行，微众银行现存许多不同于传统银行的新型金融业务和银行产品；作为一家业务领域持续拓展的企业，未来关联交易管理的难度和复杂程度与日俱增，亟需通过建立关联交易管理系统提高关联交易管理能力，确保关联交易信息的完整性、准确性、有效性、一致性和及时性。",
                             "作为一家快通过建立关联交易管理系统，实现对关联交易的监控和流程化管理，提高关联交易数据统计的完整性和准确性。",
-                            "<span style=color:#2565B4>事前管控：</span>采购系统和电子签报系统的关联交易数据的自动采集；",
-                            "<span style=color:#2565B4>事后统计：</span>大数据平台中的来自源业务系统的关联交易数据的自动采集，并关联事前管控的合同编号。",
+                            "<span style='color:#2565B4;font-weigth:400'>事前管控：</span>采购系统和电子签报系统的关联交易数据的自动采集；",
+                            "<span style='color:#2565B4;font-weigth:400'>事后统计：</span>大数据平台中的来自源业务系统的关联交易数据的自动采集，并关联事前管控的合同编号。",
                         ],
                     },
                     {
@@ -488,7 +489,7 @@ export default {
                             "投资风险专项管理方案帮助您监控投资收益的不确定性，预测在投资中可能会遭受收益损失甚至本金损失的风险。",
                         ],
                     },
-                    { type: "TITLE", title: "详述" },
+                    { type: "TITLE", title: "详述", class:"superHeight"},
                     {
                         type: "CONT",
                         conts: [
@@ -514,7 +515,7 @@ export default {
                         iconUrl: require("@/assets/scheme/jr_icon1.png"),
                         name: "数据共享",
                         datail:
-                            "实现投资风险管理信息在各职能部门之间的汇总和共享，并能够按照不同访问权限区分风险信息列示的内容。",
+                            "实现投资风险管理信息在各职能部门之间的汇总和共享，并能够按照不同访问权限区分风险信息列示的内容",
                     },
                 ],
                 partTwoData: [
@@ -545,7 +546,7 @@ export default {
                             "纵观近几年国内企业的发展，人们对合规风险的认识逐步加深，在全面风险管理体系下，合规风险成为企业机构的一项核心风险活动。在这样的背景下，大量的企业开始规范自己的风险合规管理手段，建设信息管理平台，通过信息化手段规范管理手段，提高管理效率；为保障公司的合法、合规运营提供了非常好的保障。/投前投后），存在数据口径不一样，数据决算规则不一样等特点，采用投管系统中建设风险管理功能不益于风险管理工作的开展。",
                         ],
                     },
-                    { type: "TITLE", title: "详述" },
+                    { type: "TITLE", title: "详述",class:"superMiddle" },
                     {
                         type: "IMG",
                         imgUrl: require("@/assets/scheme/hg_img1.png"),
@@ -570,13 +571,13 @@ export default {
                         iconUrl: require("@/assets/scheme/hg_icon1.png"),
                         name: "提升合规风险防范能力",
                         datail:
-                            "通过系统实现合规检查及合规信息报送功能，及时高效了解公司合规风险状况，快速决策，提升合规风险防范能力；",
+                            "通过系统实现合规检查及合规信息报送功能，及时高效了解公司合规风险状况，快速决策，提升合规风险防范能力",
                     },
                     {
                         iconUrl: require("@/assets/scheme/hg_icon2.png"),
                         name: "构建合规管理闭环管理体系",
                         datail:
-                            "通过平台搭建，打通业务数据关联，构建可持续优化的闭环合规管理体系；",
+                            "通过平台搭建，打通业务数据关联，构建可持续优化的闭环合规管理体系",
                     },
                     {
                         iconUrl: require("@/assets/scheme/hg_icon3.png"),
@@ -655,19 +656,19 @@ export default {
                         iconUrl: require("@/assets/scheme/hg_icon1.png"),
                         name: "提升合规风险防范能力",
                         datail:
-                            "通过系统实现合规检查及合规信息报送功能，及时高效了解公司合规风险状况，快速决策，提升合规风险防范能力；",
+                            "通过系统实现合规检查及合规信息报送功能，及时高效了解公司合规风险状况，快速决策，提升合规风险防范能力",
                     },
                     {
                         iconUrl: require("@/assets/scheme/hg_icon2.png"),
                         name: "构建合规管理闭环管理体系",
                         datail:
-                            "通过平台搭建，打通业务数据关联，构建可持续优化的闭环合规管理体系；",
+                            "通过平台搭建，打通业务数据关联，构建可持续优化的闭环合规管理体系",
                     },
                     {
                         iconUrl: require("@/assets/scheme/hg_icon3.png"),
                         name: "提升合规管理的效率及效果",
                         datail:
-                            "固化表单，统一标准，信息获取、高效统计，全面提升合规管理的效率和效果。",
+                            "固化表单，统一标准，信息获取、高效统计，全面提升合规管理的效率和效果",
                     },
                 ],
                 partTwoData: [
@@ -717,6 +718,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.scheme {
+    .tab-cont {
+        margin-top: 120px;
+        //  padding-bottom: 80px;
+    }
+}
+
 .parallel {
     text-align: center;
     .dividing-line2 {
@@ -729,31 +737,48 @@ export default {
         color: #050e29;
         font-weight: 400;
         &.title-1 {
-            padding: 50px 0 60px;
+            padding: 82px 0 60px;
         }
     }
 }
 .focus-box {
+    margin-top: -80px;
+    // padding-bottom: 10px;
     font-size: 16px;
     color: #788398;
     line-height: 50px;
     .focus {
         font-size: 18px;
-        margin: 30px 0;
+        margin: 14px 0;
+    }
+    .focus1 {
+        margin-bottom: 0;
     }
     .color-1 {
         color: #2565b4;
     }
 }
-.tab-cont {
-    padding-bottom: 80px;
-}
+
 .companyList {
     li {
         display: inline-block;
         vertical-align: top;
         width: 33%;
         text-align: left;
+        position: relative;
+        padding-left: 6px;
+        box-sizing: border-box;
+        &::before{
+            content: "";
+            display: inline-block;
+            width: 2px;
+            height: 2px;
+            background-color: #788398;;
+            border-radius: 50%;
+            position: absolute;
+            top:25px;
+            left: -6px;            
+        }
     }
 
     font-size: 18px;

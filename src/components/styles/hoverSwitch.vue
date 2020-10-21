@@ -60,12 +60,14 @@ export default {
 
 <style lang="scss" scoped>
 .parallel-box {
-    margin: 100px auto;
+    margin: 100px auto -30px;
+    // padding-bottom:10px ;
     width: $pc_main_size;
     .hover-box {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        padding-top:10px;
         // align-items: center;
         &.reverse {
             flex-wrap: wrap-reverse;

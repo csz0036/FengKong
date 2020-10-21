@@ -51,7 +51,7 @@ export default {
 .tab {
     width: 100%;
     overflow: visible;
-    line-height: 60px;
+    line-height: 56px;
     border-bottom: 1px solid #e5eaf1;
 
     li {

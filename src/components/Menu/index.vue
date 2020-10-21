@@ -32,13 +32,14 @@
 </template>
 
 <script>
+import scroll from "@/utils/scroll";
 export default {
     name: "Menu",
     data() {
         return {
             nav: [
                 {
-                    name: "风控首页",
+                    name: "数智风控",
                     path: "/",
                 },
                 {
@@ -71,6 +72,8 @@ export default {
                     break;
                 }
             }
+
+            scroll.clearScrollList();
         },
         openPage(path, index) {
             this.isActive = index;
@@ -92,11 +95,16 @@ export default {
 #menu {
     position: fixed;
     width: 100%;
-    span{
-        font-weight: 400 ;
+    background-color: #ffffff;
+    z-index: 200;
+    .dis-cont {
+        position: relative;
+    }
+    span {
+        font-weight: 400;
     }
     .menu_logo {
-        flex: 1;
+        // flex: 1;
         img {
             // width: 126px;
             height: 42px;
@@ -107,6 +115,9 @@ export default {
         color: #333333;
     }
     .menu_nav {
+        position: absolute;
+        right: 0;
+        background-color: #ffffff;
         ul {
             overflow: visible;
             display: inline-block;
@@ -118,21 +129,21 @@ export default {
             margin-right: 40px;
             position: relative;
             cursor: pointer;
-               transition: color 0.3s;
-             &::after {
-                    content: "";
-                    // width: 100%;
-                    height: 3px;
-                    position: absolute;
-                    background: #2970d5;
-                    border-radius: 3px;
-                    bottom: -10px;
-                    left: 0;
-                     left: 50%;
-                    transform: translateX(-50%);
-                    transition: width 0.2s;
-            width: 0%;
-                }
+            transition: color 0.3s;
+            &::after {
+                content: "";
+                // width: 100%;
+                height: 3px;
+                position: absolute;
+                background: #2970d5;
+                border-radius: 3px;
+                bottom: -10px;
+                left: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                transition: width 0.2s;
+                width: 0%;
+            }
             &.active {
                 color: #2970d5;
                 position: relative;
@@ -161,6 +172,13 @@ export default {
         letter-spacing: 0;
         text-align: center;
         text-decoration: none;
+    }
+}
+@media screen and (max-width: 1180px) {
+    #menu {
+        .menu_nav {
+            position: fixed;
+        }
     }
 }
 </style>

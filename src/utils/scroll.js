@@ -39,6 +39,9 @@ const scroll = {
                 time = Date.now();
             }
         }
+    },
+    clearScrollList(){
+        SCROLL_LIST.length = 0;
     }
 };
 
@@ -48,9 +51,11 @@ const scroll = {
         window.onscroll = scroll.throttle(function() {
             const  _scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
             SCROLL_LIST.forEach( (val) => {
+                // console.log("cur",_scrollTop);
                 if(_scrollTop >= val.START){
-                    document.getElementById(val.ID).style.transform = 'translate3D(0,0,0)'
-                    document.getElementById(val.ID).style.opacity = '1'
+                    document.getElementById(val.ID).style.transform = 'translate3D(0,0,0)';
+                    document.getElementById(val.ID).style.opacity = '1';
+                    scroll.removeEventListener(val.ID);
                 }
             })
             

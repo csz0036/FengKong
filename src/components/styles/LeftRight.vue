@@ -1,6 +1,9 @@
 <template>
     <!-- 左右结果 -->
-    <div :class="`parallel-box ${position}`">
+    <div
+        :class="`parallel-box ${position}`"
+        :style="{ height: boxHeight + 'px' }"
+    >
         <div class="text">
             <div class="title">
                 <p class="name">{{ name }}</p>
@@ -55,6 +58,10 @@ export default {
             type: String,
             default: "385",
         },
+        boxHeight: {
+            type: String,
+            default: "",
+        },
     },
 
     data() {
@@ -72,6 +79,7 @@ export default {
     align-items: center;
     padding: 106px;
     margin-bottom: 20px;
+    box-sizing: border-box;
     .text {
         .title {
             margin-bottom: 20px;
@@ -92,7 +100,6 @@ export default {
             font-size: 24px;
             line-height: 1.8;
             color: #14202b;
-            
         }
         .intro {
             font-size: 18px;

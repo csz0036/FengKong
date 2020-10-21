@@ -2,7 +2,7 @@
     <!-- 友情链接 -->
     <div class="link-box">
         <div class="cont">
-            <div v-for="(i, iIndex) in linkList" :key="iIndex" class="item">
+            <div v-for="(i, iIndex) in linkList" :key="iIndex" class="item" :class="{ showHover: !showDecs }">
                 <img
                     :src="i"
                     alt="案例介绍"
@@ -67,6 +67,8 @@ export default {
         flex: 1;
         margin-bottom: 30px;
         transition: transform 0.3s;
+    }
+    .item.showHover {
         &:hover{
             transform: scale(1.1);
             -webkit-transform: scale(1.1);

@@ -3,7 +3,7 @@
         <div :class="`case-box ${postion}`">
             <div class="text">
                 <div class="company">
-                    <p>
+                    <p class="company-show">
                         <img class="icon" :src="icon" alt="" />
                         <span class="name">{{ name }}</span>
                     </p>
@@ -83,16 +83,20 @@ export default {
 
 <style lang="scss" scoped>
 .case-box {
+    overflow: hidden;
     display: flex;
     align-items: center;
     .text {
-        margin-bottom: 60px;
+        margin-bottom: 80px;
     }
-    padding: 90px 0;
+    padding: 106px 0 130px 0 ;
     width: 1224px;
     margin: 0 auto;
+    .company-show{
+        margin-bottom:18px ;
+    }
     .company {
-        padding: 0 40px;
+        padding: 0 40px 0 0;
         margin-bottom: 40px;
          width: 442px;
         
@@ -124,7 +128,7 @@ export default {
 
     .project {
         width: 442px;
-        padding: 0 40px;
+        
     }
     .title {
         font-size: 20px;
@@ -158,9 +162,15 @@ export default {
     }
     .project {
         border-left: 1px solid #d0d2d3;
-    }
-    .project {
         width: 612px;
+        // padding: 0;
+        padding: 14px 0 0 60px ;
+    }
+}
+#midea{
+    .icon{
+        margin-left: -1px;
+        margin-top: -16px;
     }
 }
 </style>

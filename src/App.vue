@@ -30,6 +30,10 @@ export default {
 
 <style lang="scss">
 #app {
+     min-width: 1180px;
+    overflow: auto;
+    // width: 100%;
+    // overflow: hidden;;
     .main-container {
         padding-top: 80px;
     }

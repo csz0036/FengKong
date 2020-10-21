@@ -82,7 +82,7 @@ export default {
         font-size: 16px;
         color: #ffffff;
         line-height: 20px;
-        margin-bottom: 28px;
+        margin-bottom: 22px;
     }
 }
 </style>
