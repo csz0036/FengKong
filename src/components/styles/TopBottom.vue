@@ -19,7 +19,7 @@
                 {{ i.title }}
             </p>
 
-            <div class="sub-title" v-else>{{ i.subTtitle }}</div>
+            <div :class="`sub-title ${i.class}`" v-else>{{ i.subTtitle }}</div>
         </div>
     </div>
 </template>
@@ -82,6 +82,9 @@ export default {
         color: #050e29;
         letter-spacing: 0;
         // line-height: 50px;
+        &.small{
+             font-size: 18px;
+        }
     }
     .img {
         text-align: center;

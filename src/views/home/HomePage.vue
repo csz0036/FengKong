@@ -323,7 +323,9 @@ export default {
     // position: relative;
     // overflow: hidden;
 }
-
+#scorll4{
+    margin-top: 60px;
+}
 // #scorll0 {
 //     .parallel-box {
 //         padding: 28px 106px 34px;

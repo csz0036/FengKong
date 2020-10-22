@@ -89,20 +89,19 @@ export default {
     .text {
         margin-bottom: 80px;
     }
-    padding: 106px 0 130px 0 ;
+    padding: 106px 0 130px 0;
     width: 1224px;
     margin: 0 auto;
-    .company-show{
-        margin-bottom:18px ;
+    .company-show {
+        margin-bottom: 18px;
     }
     .company {
         padding: 0 40px 0 0;
         margin-bottom: 40px;
-         width: 442px;
-        
+        width: 442px;
     }
-    .company p{
-         display: flex;
+    .company p {
+        display: flex;
         align-items: center;
     }
     .name,
@@ -123,12 +122,10 @@ export default {
         font-size: 14px;
         color: #788398;
         line-height: 24px;
-       
     }
 
     .project {
         width: 442px;
-        
     }
     .title {
         font-size: 20px;
@@ -164,13 +161,21 @@ export default {
         border-left: 1px solid #d0d2d3;
         width: 612px;
         // padding: 0;
-        padding: 14px 0 0 60px ;
+        padding: 14px 0 0 60px;
     }
 }
-#case5{
-    .icon{
+#case5 {
+    .icon {
         margin-left: -1px;
         margin-top: -16px;
+    }
+}
+#case1 {
+    .icon {
+        margin-left: -30px;
+    }
+    .name {
+        white-space: nowrap;
     }
 }
 </style>
