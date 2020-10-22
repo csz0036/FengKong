@@ -8,6 +8,7 @@
             :bg="bannerBg"
         ></Banner>
         <CaseItem
+            id="case0"
             class="bg-0"
             postion="top"
             :icon="iconUrl1"
@@ -33,6 +34,7 @@
         ></CaseItem>
 
         <CaseItem
+        id="case1"
             class="bg-1"
             :icon="iconUrl2"
             name="中国诚通控股集团有限公司"
@@ -47,6 +49,7 @@
         ></CaseItem>
 
         <CaseItem
+        id="case2"
             class="bg-0"
             postion="top"
             :icon="iconUrl3"
@@ -76,6 +79,7 @@
         ></CaseItem>
 
         <CaseItem
+        id="case3"
             class="bg-1"
             postion="top"
             :icon="iconUrl4"
@@ -101,6 +105,7 @@
         ></CaseItem>
 
         <CaseItem
+        id="case4"
             class="bg-0"
             :icon="iconUrl5"
             name="上海机场集团有限公司"
@@ -113,8 +118,8 @@
         ></CaseItem>
 
         <CaseItem
+        id="case5"
             class="bg-1"
-            id="midea"
             :icon="iconUrl6"
             name="美的集团股份有限公司"
             companyIntro="1998年5月28日，经上海市人民政府批准，组建上海机场（集团）有限公司，统一经营管理上海浦东和虹桥两大国际机场。公司经营范围包括机场建设、运营管理，与国内外航空运输有关的地面服务，国际国内贸易（除专项规定），对外技术合作等。2019年9月1日，2019中国服务业企业500强榜单在济南发布，上海机场（集团）有限公司排名第269位。"
@@ -138,6 +143,7 @@
         ></CaseItem>
 
         <CaseItem
+        id="case6"
             class="bg-0"
             :icon="iconUrl7"
             name="上海电气集团"
@@ -150,6 +156,7 @@
         ></CaseItem>
 
         <CaseItem
+        id="case7"
             class="bg-1"
             :icon="iconUrl8"
             name="中原环保股份有限公司"
@@ -225,7 +232,20 @@ export default {
             ],
         };
     },
-    mounted() {},
+    methods: {
+        scrollHack(eleId) {
+            document.getElementById(eleId).scrollIntoView();
+            // console.log("ele==",document.getElementById(eleId));
+        },
+    },
+    mounted() {
+        let caseId = this.$route.query.caseId;
+        if (caseId != undefined) {
+            // this.$router.push({ query: {} }); // 清除参数
+            // console.log("caseId==",caseId);
+            this.scrollHack("case"+caseId);
+        }
+    },
 };
 </script>
 

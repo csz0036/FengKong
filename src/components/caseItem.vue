@@ -167,7 +167,7 @@ export default {
         padding: 14px 0 0 60px ;
     }
 }
-#midea{
+#case5{
     .icon{
         margin-left: -1px;
         margin-top: -16px;

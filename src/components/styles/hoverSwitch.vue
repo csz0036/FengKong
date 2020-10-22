@@ -67,7 +67,7 @@ export default {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        padding-top:10px;
+        padding-top: 10px;
         // align-items: center;
         &.reverse {
             flex-wrap: wrap-reverse;
@@ -79,8 +79,10 @@ export default {
                 margin: 0 10px 10px 0;
             }
             .normal {
-                width: 92px;
-                height: 92px;
+                img {
+                    width: 92px;
+                    height: 92px;
+                }
             }
             .name {
                 font-size: 20px;
@@ -92,6 +94,11 @@ export default {
         &.smallPadding {
             .active {
                 padding: 26px;
+            }
+        }
+        &.middlePadding {
+            .active {
+                padding: 40px;
             }
         }
     }
@@ -158,7 +165,8 @@ export default {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        word-break: keep-all;
+        // word-break: keep-all;
+            white-space: nowrap;
 
         img {
             width: 76px;

@@ -2,7 +2,13 @@
     <!-- 友情链接 -->
     <div class="link-box">
         <div class="cont">
-            <div v-for="(i, iIndex) in linkList" :key="iIndex" class="item" :class="{ showHover: !showDecs }">
+            <div
+                v-for="(i, iIndex) in linkList"
+                :key="iIndex"
+                class="item"
+                :class="{ showHover: !showDecs }"
+                @click="openPage(iIndex)"
+            >
                 <img
                     :src="i"
                     alt="案例介绍"
@@ -51,7 +57,18 @@ export default {
         return {};
     },
 
-    methods: {},
+    methods: {
+        openPage(linkIndex) {
+            if (!this.showDecs) {
+                // console.log("linkIndex===========", linkIndex);
+                this.$router.push({
+                    path: "/riskControl",
+                    // hash:'container',
+                    query: { caseId: linkIndex },
+                });
+            }
+        },
+    },
 };
 </script>
 
@@ -69,7 +86,7 @@ export default {
         transition: transform 0.3s;
     }
     .item.showHover {
-        &:hover{
+        &:hover {
             transform: scale(1.1);
             -webkit-transform: scale(1.1);
         }
