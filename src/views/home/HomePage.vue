@@ -88,7 +88,6 @@
             <h2 class="title title-1">经典案例介绍</h2>
             <div class="cont-parallel">
                 <LinkByColumn
-                    cloumnWidth="cloumnWidth"
                     :linkList="linkList"
                 ></LinkByColumn>
             </div>
@@ -194,7 +193,7 @@ export default {
                 .map((i, iIndex) =>
                     require(`@/assets/links/link${iIndex}.png`)
                 ),
-            cloumnWidth: 276,
+            // cloumnWidth: 276,
             // scrollElemnt: [
             //     {
             //         id: "scorll0",

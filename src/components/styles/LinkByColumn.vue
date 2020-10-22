@@ -8,15 +8,12 @@
                 class="item"
                 :class="{ showHover: !showDecs }"
                 @click="openPage(iIndex)"
+                :style="{
+                    width: cloumnWidth + 'px',
+                    height: cloumnHight + 'px',
+                }"
             >
-                <img
-                    :src="i"
-                    alt="案例介绍"
-                    :style="{
-                        width: cloumnWidth + 'px',
-                        height: cloumnHight + 'px',
-                    }"
-                />
+                <img :src="i" alt="案例介绍" />
             </div>
         </div>
 
@@ -35,11 +32,11 @@ export default {
         // },
         cloumnWidth: {
             type: String,
-            default: "0",
+            default: "294",
         },
         cloumnHight: {
             type: String,
-            default: "90",
+            default: "108",
         },
         linkList: {
             type: Array,
@@ -75,13 +72,16 @@ export default {
 <style lang="scss" scoped>
 .link-box {
     padding-bottom: 60px;
+    font-size: 0;
     .cont {
-        display: flex;
-        flex-wrap: wrap;
+        // display: flex;
+        // flex-wrap: wrap;
+        display: inline-block;
     }
 
     .item {
-        flex: 1;
+        // flex: 1;
+        display: inline-block;
         margin-bottom: 30px;
         transition: transform 0.3s;
     }
@@ -90,6 +90,11 @@ export default {
             transform: scale(1.1);
             -webkit-transform: scale(1.1);
         }
+    }
+
+    img {
+        width: 100%;
+        // height: 100%;
     }
 
     .desc {
