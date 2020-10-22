@@ -24,7 +24,7 @@
             </div>
         </div>
         <!-- 风控管理信息化方案特色 -->
-        <div class="parallel bg-1">
+        <div class="parallel bg-1 margin-middle">
             <h2 class="title title-1">风控管理信息化方案特色</h2>
             <div class="cont-parallel">
                 <div
@@ -143,7 +143,7 @@ export default {
                     name: "集团架构，分级管理",
                     cont:
                         "产品设计充分考虑集团及下级单位需求，提供多层级风险库、内控矩阵库，支持风险评估、内控评价、指标监控等工作的全级次覆盖。",
-                    style: ["442", "240"],
+                    style: ["442", "263"],
                     img: require("@/assets/index/img4.png"),
                     position: "rightBox",
                 },
@@ -322,8 +322,8 @@ export default {
     // position: relative;
     // overflow: hidden;
 }
-#scorll4{
-    margin-top: 60px;
+.margin-middle{
+    margin-bottom: 60px;
 }
 // #scorll0 {
 //     .parallel-box {
