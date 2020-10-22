@@ -241,7 +241,7 @@ export default {
     mounted() {
         let caseId = this.$route.query.caseId;
         if (caseId != undefined) {
-            // this.$router.push({ query: {} }); // 清除参数
+            this.$router.push({ query: {} }); // 清除参数
             // console.log("caseId==",caseId);
             this.scrollHack("case"+caseId);
         }
