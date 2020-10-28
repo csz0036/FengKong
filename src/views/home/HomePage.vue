@@ -6,6 +6,10 @@
             class="banner-box"
             :style="{ backgroundImage: `url(${bannerImg})` }"
         >
+            <!-- <div
+                class="banner-gif"
+                :style="{ backgroundImage: `url(${bannerGif})` }"
+            ></div> -->
             <div class="cw">
                 <div class="banner-cont">
                     <p class="intro">
@@ -87,9 +91,7 @@
             <div class="dividing-line"></div>
             <h2 class="title title-1">经典案例介绍</h2>
             <div class="cont-parallel">
-                <LinkByColumn
-                    :linkList="linkList"
-                ></LinkByColumn>
+                <LinkByColumn :linkList="linkList"></LinkByColumn>
             </div>
         </div>
     </div>
@@ -102,7 +104,8 @@ import IntroductionMore from "@/components/styles/IntroductionMore";
 import LinkByColumn from "@/components/styles/LinkByColumn";
 import scroll from "@/utils/scroll";
 import ButtonMore from "@/components/styles/ButtonMore";
-import bannerImg from "@/assets/index/banner0.jpg";
+import bannerImg from "@/assets/index/banner0.gif";
+// import bannerGif from "@/assets/index/banner.gif";
 export default {
     components: {
         // Slider,
@@ -114,13 +117,14 @@ export default {
     data() {
         return {
             bannerImg: bannerImg,
+            // bannerGif:bannerGif,
             contBox1: [
                 {
                     name: "知识图谱，业务互联",
                     cont:
                         "关联风险、内控、合规等管理数据要素，形成一体化风险管控体系，互通互融，消除壁垒，奠定“四位一体”管理基础。",
                     style: ["396", "385"],
-                    img: require("@/assets/index/img1.png"),
+                    img: require("@/assets/index/img1.gif"),
                     position: "leftBox",
                 },
                 {
@@ -128,23 +132,23 @@ export default {
                     cont:
                         "以风控中台为基础，提供多种方式采集内外部数据，运用大数据及人工智能技术，灵活定义风险指标及模型，实现重大风险实时监测，快速预警。",
                     style: ["339", "238"],
-                    img: require("@/assets/index/img2.png"),
+                    img: require("@/assets/index/img2.gif"),
                     position: "rightBox",
                 },
                 {
                     name: "专项风险，内控嵌入",
                     cont:
                         "与合同、投资、采购、关联交易等业务系统深度融合，将风险控制要求，预警提示嵌入业务系统，增强内控体系刚性约束。",
-                    style: ["344", "308"],
-                    img: require("@/assets/index/img3.png"),
+                    style: ["410", "308"],
+                    img: require("@/assets/index/img3.gif"),
                     position: "leftBox",
                 },
                 {
                     name: "集团架构，分级管理",
                     cont:
                         "产品设计充分考虑集团及下级单位需求，提供多层级风险库、内控矩阵库，支持风险评估、内控评价、指标监控等工作的全级次覆盖。",
-                    style: ["442", "263"],
-                    img: require("@/assets/index/img4.png"),
+                    style: ["444", "333"],
+                    img: require("@/assets/index/img4.gif"),
                     position: "rightBox",
                 },
             ],
@@ -322,7 +326,7 @@ export default {
     // position: relative;
     // overflow: hidden;
 }
-.margin-middle{
+.margin-middle {
     margin-bottom: 60px;
 }
 // #scorll0 {
@@ -342,6 +346,17 @@ export default {
     // .banner-img {
 
     height: 578px;
+    position: relative;
+
+    .banner-gif{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: 1;
+        background-size: contain;
+        background-position:20% center;
+        background-repeat:no-repeat ;
+    }
     //     position: absolute;
     //     z-index: -1;
     // }
@@ -354,6 +369,8 @@ export default {
     //     box-sizing: border-box;
     // }
     .banner-cont {
+        // position: relative;
+        // z-index: 2;
         padding: 172px 0 0 25px;
         width: 612px;
         color: #ffffff;

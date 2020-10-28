@@ -25,7 +25,7 @@
                     </li>
                 </ul>
                 <!-- todo：链接是多是 -->
-                <a href="" class="demo_link">预约演示</a>
+                <a href="http://fzy.smartdot.com/applyLoding.html" class="demo_link" target="_blank">预约演示</a>
             </div>
         </div>
     </div>

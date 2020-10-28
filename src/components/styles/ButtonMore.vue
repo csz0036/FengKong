@@ -1,6 +1,6 @@
 <template>
     <!-- 更多按钮 -->
-    <a :class="`buttonMore ${type}`" :href="path" :target="target">
+    <a :class="`buttonMore ${type}`" href="http://fzy.smartdot.com/applyLoding.html" target="_blank">
         <span>
             预约演示
             <!-- <slot /> -->
