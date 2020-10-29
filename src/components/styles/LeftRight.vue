@@ -130,6 +130,7 @@ export default {
 .centerBox {
     flex-direction: column;
     .text {
+        max-width: 100%;
         margin-bottom: 50px;
         .cont {
             width: 100%;
