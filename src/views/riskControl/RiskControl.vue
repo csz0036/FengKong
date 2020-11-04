@@ -4,7 +4,7 @@
         <Banner
             enName="Rish control cases"
             cnName="风控案例"
-            introduction="200+客户，覆盖央企、地方国企、上市公司等总多领域，涉及能源、交通、金融、建筑、钢铁、石油石化、电信等多个行业"
+            introduction="200+客户，覆盖央企、地方国企、上市公司等众多领域\n涉及能源、交通、金融、建筑、钢铁、石油石化、电信等多个行业"
             :bg="bannerBg"
         ></Banner>
         <CaseItem
