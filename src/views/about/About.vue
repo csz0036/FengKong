@@ -3,7 +3,7 @@
         <Banner
             enName="Product introduction"
             cnName="产品介绍"
-            introduction="数据关联促进风险、合规、内控、法务管理融合风控中台赋能企业数智化风险控制手段"
+            introduction="数据关联促进风险、合规、内控、法务管理融合\n风控中台赋能企业数智化风险控制手段"
             :bg="bannerBg"
         ></Banner>
 

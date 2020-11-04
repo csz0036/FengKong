@@ -8,7 +8,14 @@
                     src="@/assets/Logo.png"
                     @click="$router.push('/')"
                 />
-                数智风控
+                <!-- <span>
+                    
+                </span> -->
+                <img
+                    class="logo_fzy"
+                    src="@/assets/logo_fzy.png"
+                    @click="$router.push('/')"
+                />
             </div>
             <div class="menu_nav">
                 <ul>
@@ -25,7 +32,7 @@
                     </li>
                 </ul>
                 <!-- todo：链接是多是 -->
-                <a href="http://fzy.smartdot.com/applyLoding.html" class="demo_link" target="_blank">预约演示</a>
+                <div class="demo_link" @click="$router.push('/reservation')">预约演示</div>
             </div>
         </div>
     </div>
@@ -79,6 +86,10 @@ export default {
             this.isActive = index;
             if (this.$route.fullPath !== path) {
                 this.$router.push(path);
+
+                // 滚动到顶部
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
             }
         },
     },
@@ -105,15 +116,24 @@ export default {
     }
     .menu_logo {
         // flex: 1;
+        display: flex;
+        align-items: baseline;
         img {
             // width: 126px;
             height: 42px;
-            display: block;
+            // display: block;
             margin-right: 20px;
+            // vertical-align: middle;
+        }
+        .logo_fzy {
+            height: 34px;
+            border-left: 1px solid rgba(151, 151, 151, 0.3);
+            padding-left: 20px;
         }
         font-size: 20px;
         color: #333333;
     }
+
     .menu_nav {
         position: absolute;
         right: 0;
