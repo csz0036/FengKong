@@ -26,13 +26,15 @@
                         :class="{
                             active: isActive === iIndex,
                         }"
-                        @click="openPage(i.path, iIndex)"
+                        @click="openMenu(i.path, iIndex)"
                     >
                         <span>{{ i.name }}</span>
                     </li>
                 </ul>
                 <!-- todo：链接是多是 -->
-                <div class="demo_link" @click="$router.push('/reservation')">预约演示</div>
+                <div class="demo_link" @click="openPage('/reservation')">
+                    预约演示
+                </div>
             </div>
         </div>
     </div>
@@ -82,8 +84,11 @@ export default {
 
             scroll.clearScrollList();
         },
-        openPage(path, index) {
+        openMenu(path, index) {
             this.isActive = index;
+            this.openPage(path);
+        },
+        openPage(path) {
             if (this.$route.fullPath !== path) {
                 this.$router.push(path);
 
@@ -192,6 +197,7 @@ export default {
         letter-spacing: 0;
         text-align: center;
         text-decoration: none;
+        cursor: pointer;
     }
 }
 @media screen and (max-width: 1180px) {
