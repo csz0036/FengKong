@@ -1,12 +1,12 @@
 <template>
     <!-- 更多按钮 -->
-    <a :class="`buttonMore ${type}`" href="http://fzy.smartdot.com/applyLoding.html" target="_blank">
+    <span :class="`buttonMore ${type}`" @click="$router.push('/reservation')">
         <span>
             预约演示
             <!-- <slot /> -->
         </span>
         <img :src="arrow[type]" />
-    </a>
+    </span>
 </template>
 
 <script>
