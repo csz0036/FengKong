@@ -82,7 +82,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.case-box {
+.case-box {    
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -121,7 +121,7 @@ export default {
     .company-intro {
         font-size: 14px;
         color: #788398;
-        line-height: 24px;
+        line-height: 24px;       
     }
 
     .project {
@@ -137,6 +137,10 @@ export default {
         font-size: 14px;
         color: #050e29;
         line-height: 24px;
+        /deep/span{
+            color:#4889E6;
+            font-family:'Heiti SC','黑体-简'
+        }
     }
 
     .sub-title {
