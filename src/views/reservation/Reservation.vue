@@ -15,68 +15,65 @@
                             <img src="./imgs/ic_1.png" class="iconImg" alt=""> 
                             <input type="text" id="input_1" v-model="formObj.name" placeholder="您的名字">
                         </label>
-                        <p class="errorInfo" id="userName">请输入姓名</p>
+                        <p class="errorInfo" id="userName" v-if="formError.nameEeeor">请输入姓名</p>
                     </div>
                     <div class="inputLab">
                         <label for="input_2"><img src="./imgs/ic_2.png" class="iconImg" alt=""> 
-                            <input type="text" id="input_2" placeholder="公司名称">
+                            <input type="text" id="input_2" v-model="formObj.companyName" placeholder="公司名称">
                         </label>
-                        <p class="errorInfo" id="companyName">请输入公司名称</p>
+                        <p class="errorInfo" id="companyName" v-if="formError.companyNameEeeor">请输入公司名称</p>
                     </div>
                     <div class="inputLab"><label for="input_3">
                         <img src="./imgs/ic_3.png" class="iconImg" alt="">
                             <div class="selectBox">
-                                <p class="defaultText">请选择企业规模</p>
-                                <ul id="scaleNumber">
-                                    <li>20人以下</li>
-                                    <li>20-100人</li>
-                                    <li>100-300人</li>
-                                    <li>300-500人</li>
-                                    <li>500人以上</li>
+                                <p class="defaultText" @click="showUl">{{formObj.companyScale}}</p>
+                                <ul id="scaleNumber" :style="{height: ulHeight}">
+                                    <li v-for="(item, ind) in list" :key="ind" @click="scaleItem(item)">{{item}}</li>
                                 </ul>
                             </div>
                         </label>
-                        <p class="errorInfo" id="selsectCompany">请选择企业规模</p>
+                        <p class="errorInfo" id="selsectCompany" v-if="formError.companyScaleEeeor">请选择企业规模</p>
                     </div>
                     <div class="inputLab">
                         <label for="input_4"><img src="./imgs/ic_4.png" class="iconImg" alt=""> 
-                            <input type="text" id="input_4" placeholder="公司邮箱">
+                            <input type="text" id="input_4" placeholder="公司邮箱"  v-model="formObj.companyMail">
                         </label>
-                        <p class="errorInfo" id="companyMail">请输入正确的邮箱</p>
+                        <p class="errorInfo" id="companyMail" v-if="formError.companyMailEeeor">请输入正确的邮箱</p>
                     </div>
-                    <div class="inputLab2"><textarea name="" id="textareaId" placeholder="备注"></textarea></div>
+                    <div class="inputLab2"><textarea name="" id="textareaId" placeholder="备注"  v-model="formObj.textarea"></textarea></div>
                     <div class="inputLab">
                         <label for="input_5">
                             <img src="./imgs/ic_5.png" class="iconImg" alt=""> 
-                            <input type="text" id="input_5" placeholder="手机号码">
+                            <input type="text" id="input_5" placeholder="手机号码"  v-model="formObj.phoneNumber">
                         </label>
-                        <p class="errorInfo" id="phoneNumber">请输入正确的手机号码</p>
+                        <p class="errorInfo" id="phoneNumber" v-if="formError.phoneNumberEeeor">请输入正确的手机号码</p>
                     </div>
                     <div class="inputLab">
                         <label for="input_6">
-                            <input type="text" id="input_6" placeholder="验证码">
+                            <input type="text" id="input_6" placeholder="验证码"  v-model="formObj.getYZM">
                         </label>
-                        <p class="YZMInfo" id="getYZM">获取验证码</p>
+                        <p class="YZMInfo" @click="getYZM" v-if="djs == '获取验证码'">{{djs}}</p>
+                        <p class="YZMInfo" v-else>{{djs}}</p>
                         <p class="YZMInfo" id="showTime"></p>
                     </div>
                     <p id="submitBut" @click="getAuthority">申请申请，免费体验</p>
                 </div>
             </div>
         </div>
-        <div id="successSubmit" class="submitInfo">
-            <div class="innerSuccess"><img src="./imgs/success.png" class="successImg" alt="">
+        <div id="successSubmit" class="submitInfo" v-show="successPoput">
+            <div class="innerSuccess"><img src="@/assets/success.png" class="successImg" alt="">
                 <p class="tit">您已经成功提交申请</p>
                 <p class="cont">我们的顾问会在1个工作日内与您取得联系，为您安排产品体验。</p>
             </div>
         </div>
-        <div id="errorInfo" class="submitInfo">
-            <div class="innerSuccess"><img src="./imgs/error.png" class="successImg" alt="">
+        <div id="errorInfo" class="submitInfo" v-show="errorPoput" @click="hideErrorInfo">
+            <div class="innerSuccess"><img src="@/assets/error.png" class="successImg" alt="">
                 <p class="tit">错误提示</p>
-                <p class="cont" id="errorContent"></p>
+                <p class="cont" id="errorContent">{{errorMsg}}</p>
             </div>
         </div>
-        <div id="universalTotl">
-            <div class="infoText"></div>
+        <div id="universalTotl" v-show="changeMsg">
+            <div class="infoText">{{msg}}</div>
         </div>
     </div>
 </template>
@@ -90,20 +87,137 @@ export default {
     data() {
         return {
             formObj:{
-                name:''
-            }
-           
+                name:'',
+                companyName:'',
+                companyMail:'',
+                textarea:'',
+                phoneNumber:'',
+                getYZM:'',
+                companyScale:'请选择企业规模'
+            },
+            formError:{
+                nameEeeor:false,
+                companyNameEeeor:false,
+                companyMailEeeor:false,
+                phoneNumberEeeor:false,
+                companyScaleEeeor:false,
+            },
+            errorPoput: false,
+            successPoput: false,
+            errorMsg:'',
+            ulHeight:0,
+            list:['20人以下', '20-100人', '100-300人', '300-500人', '500人以上'],
+            msg:'',
+            changeMsg: false,
+            djs:'获取验证码',
         };
     },
     mounted() {
     },
     methods: {
         test(){
-            // $('a').cl
             console.log("0000")
         },
-        getAuthority(){
+        scaleItem(item){
+            this.formObj.companyScale = item;
+            this.ulHeight == 0
+        },
+        showUl(){
+            this.ulHeight == 0 ?  this.ulHeight = 'auto' : this.ulHeight = 0
+        },
+        getYZM(){
+            if(!this.formObj.phoneNumber){
+                this.formError.phoneNumberEeeor = true
+                return
+            }
 
+            this.time(60,()=>{
+                this.djs = '获取验证码';
+            }, 'djs')
+
+
+            this.axios.post('http://fzy.smartdot.com/api/v1/user/sms_code',{phone: this.formObj.phoneNumber}).then((response) => {
+                this.changeMsg = true;
+                console.log(response)
+                 if(response.data.head.error == 0){
+                    this.msg = '验证码已经发送，请查收'
+                 }else{
+                     this.msg = '验证码发送失败，请稍后再试'
+                 }
+                 this.time(3,()=>{
+                     this.changeMsg = false;
+                 })
+            })
+        },
+        hideErrorInfo(){
+            this.errorPoput = false
+        },
+        time(Stime, callBack, elem, clear = false){
+            let t ;
+            clearInterval(t)
+            if(clear) return;
+            t = setInterval(()=>{
+                Stime--;
+                if(elem){
+                    this[elem] = Stime
+                }
+                console.log(Stime)
+                if(Stime <= 0){
+                    clearInterval(t)
+                    callBack()
+                }
+                
+            },1000)
+        },
+        getAuthority(){
+            const {name, companyName, companyMail, phoneNumber, getYZM, textarea, companyScale} =  this.formObj
+            if(!name){
+                this.formError.nameEeeor = true
+                return
+            }
+
+            if(!companyName){
+                this.formError.companyNameEeeor = true
+                return
+            }
+
+            if(!companyMail){
+                this.formError.companyMailEeeor = true
+                return
+            }
+
+            if(companyScale == '请选择企业规模'){
+                this.formError.companyScaleEeeor = true
+                return
+            }
+
+            if(!phoneNumber){
+                this.formError.phoneNumberEeeor = true
+                return
+            }
+
+            this.axios.post('http://fzy.smartdot.com/api/v1/user/post_info',{
+                name: name,
+                company_scale: companyScale,
+                company_email: companyMail,
+                company: companyName,
+                phone: phoneNumber,
+                code: getYZM,
+                memo: textarea,
+            }).then((response) => {
+                if(response.data.head.error == 1){
+                    this.errorPoput = true
+                    this.errorMsg = response.data.head.message;
+                    this.time(3,()=>{
+                        this.errorPoput = false;
+                    })
+                }else{
+                    this.successPoput = true;
+                    this.time(3,()=>{
+                        this.$router.push('/')
+                    })
+                }
+            })
         }
     },
 };

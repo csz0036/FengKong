@@ -556,7 +556,6 @@
     color: #fc2222;
     top: 9px;
     right: 5px;
-    display: none;
     z-index: 12;
     background-color: #fff;
 }
@@ -701,7 +700,6 @@
     text-align: center;
     font-size: 16px;
     z-index: 111;
-    display: none;
 }
 .submitInfo::after {
     content: "";
@@ -755,7 +753,6 @@ textarea:-ms-input-placeholder {
 }
 #universalTotl {
     z-index: 111;
-    display: none;
 }
 #universalTotl::after {
     content: "";

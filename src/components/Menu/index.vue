@@ -14,19 +14,8 @@
       <div class="cw dis-cont">
         <div class="menu_logo dis-cont">
           <!-- logo -->
-          <img
-            class="menu__container_logo"
-            src="@/assets/Logo.png"
-            @click="$router.push('/')"
-          />
-          <!-- <span>
-                        
-                    </span> -->
-          <img
-            class="logo_fzy"
-            src="@/assets/logo_fzy.png"
-            @click="$router.push('/')"
-          />
+          <a href="http://www.smartdot.com/" target="_blank"><img class="menu__container_logo" src="@/assets/Logo.png" @click="$router.push('/')"/></a> 
+          <a href="http://fzy.smartdot.com/" target="_blank"><img class="logo_fzy"  src="@/assets/logo_fzy.png" /></a>
         </div>
         <div class="menu_nav">
           <ul>
@@ -44,7 +33,8 @@
           </ul>
           <!-- todo：链接是多是 -->
           <div class="demo_link" @click="openPage('/reservation')">
-            预约演示
+            <!-- 预约演示 -->
+            <img src="@/assets/header-main-robot.png" />
           </div>
         </div>
       </div>
@@ -178,6 +168,8 @@ export default {
     position: absolute;
     right: 0;
     background-color: #ffffff;
+    display: flex;
+    align-items: center;
     ul {
       overflow: visible;
       display: inline-block;
@@ -223,9 +215,9 @@ export default {
   .demo_link {
     display: inline-block;
     width: 92px;
-    height: 36px;
-    line-height: 36px;
-    background-image: linear-gradient(180deg, #f39800 0%, #f18e00 100%);
+    height: 45px;
+    // line-height: 45px;
+    
     border-radius: 2px;
     font-size: 14px;
     color: #ffffff;
@@ -233,6 +225,12 @@ export default {
     text-align: center;
     text-decoration: none;
     cursor: pointer;
+    img {
+      width: 96px;
+      height: 45px;
+      position: relative;
+      top: -7px;
+    }
   }
 }
 @media screen and (max-width: 1180px) {
@@ -242,4 +240,5 @@ export default {
     }
   }
 }
+
 </style>
