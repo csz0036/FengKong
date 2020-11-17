@@ -6,17 +6,21 @@
         <router-view class="main-container" />
         <!-- 页脚 -->
         <Footer />
+        <!-- 右侧悬浮 -->
+        <Sus />
     </div>
 </template>
 
 <script>
 import Menu from "@/components/Menu";
 import Footer from '@/components/Footer';
+import Sus from '@/components/suspension';
 
 export default {
     components: {
         Menu,
-        Footer
+        Footer,
+        Sus
     },
     data() {
         return {};
