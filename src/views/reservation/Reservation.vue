@@ -204,6 +204,7 @@ export default {
                 phone: phoneNumber,
                 code: getYZM,
                 memo: textarea,
+                source:1
             }).then((response) => {
                 if(response.data.head.error == 1){
                     this.errorPoput = true
