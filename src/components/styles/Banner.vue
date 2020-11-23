@@ -4,7 +4,7 @@
         <div class="cw">
             <div class="banner-cont">
                 <div class="text">
-                    <p class="en-name">{{ enName }}</p>
+                    <!-- <p class="en-name">{{ enName }}</p> -->
                     <p class="cn-name">{{ cnName }}</p>
                     <p class="introduction" v-html="Wrap(introduction)"></p>
                 </div>
@@ -82,7 +82,7 @@ export default {
         font-size: 16px;
         color: #ffffff;
         line-height: 20px;
-        margin-bottom: 22px;
+        margin-bottom: 26px;
     }
 }
 </style>
