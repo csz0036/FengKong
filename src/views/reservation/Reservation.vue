@@ -3,7 +3,7 @@
         <div class="applyCentre">
             <div class="applyContent">
                 <div class="leftText">
-                    <h2>您将了解电子签约如何</h2>
+                    <h2>您是否希望了解数智风控产品，可预约演示</h2>
                     <p>慧点科技大数据风控产品全面关联风险、内控、合规等管理要素，形成一体化的风险管控体系，业务互通互融，消除管理壁垒；整合大数据智能分析需求，集成业务数据，通过指标、模型、图谱等手段实时监控业务运行，及时洞察，快速纠偏。                        
                     </p>
                 </div>
@@ -26,7 +26,8 @@
                     <div class="inputLab"><label for="input_3">
                         <img src="./imgs/ic_3.png" class="iconImg" alt="">
                             <div class="selectBox">
-                                <p class="defaultText" @click="showUl">{{formObj.companyScale}}</p>
+                                <!-- <p class="defaultText" @click="showUl" @blur.prevent="showUl">{{formObj.companyScale}}</p> -->
+                                <input type="text" class="defaultText" @focus="showUl" @blur="hideUl" v-model="formObj.companyScale" >
                                 <ul id="scaleNumber" :style="{height: ulHeight}">
                                     <li v-for="(item, ind) in list" :key="ind" @click="scaleItem(item)">{{item}}</li>
                                 </ul>
@@ -115,15 +116,17 @@ export default {
     mounted() {
     },
     methods: {
-        test(){
-            console.log("0000")
-        },
         scaleItem(item){
             this.formObj.companyScale = item;
-            this.ulHeight == 0
+            this.ulHeight = 0;
         },
         showUl(){
-            this.ulHeight == 0 ?  this.ulHeight = 'auto' : this.ulHeight = 0
+            this.ulHeight = 'auto';
+        },
+        hideUl(){
+            setTimeout(()=>{
+                this.ulHeight = 0;
+            },100);
         },
         getYZM(){
             if(!this.formObj.phoneNumber){
@@ -169,8 +172,18 @@ export default {
                 
             },1000)
         },
+        ResetErrorInfo(){
+            this.formError = {
+                nameEeeor:false,
+                companyNameEeeor:false,
+                companyMailEeeor:false,
+                phoneNumberEeeor:false,
+                companyScaleEeeor:false,
+            }
+        },
         getAuthority(){
             const {name, companyName, companyMail, phoneNumber, getYZM, textarea, companyScale} =  this.formObj
+            this.ResetErrorInfo();
             if(!name){
                 this.formError.nameEeeor = true
                 return
@@ -181,13 +194,13 @@ export default {
                 return
             }
 
-            if(!companyMail){
-                this.formError.companyMailEeeor = true
+            if(companyScale == '请选择企业规模'){
+                this.formError.companyScaleEeeor = true
                 return
             }
 
-            if(companyScale == '请选择企业规模'){
-                this.formError.companyScaleEeeor = true
+            if(!companyMail){
+                this.formError.companyMailEeeor = true
                 return
             }
 
