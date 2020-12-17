@@ -655,7 +655,7 @@
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAOVBMVEX////19fX7+/vp6ens7Ozi4uLz8/PX19fa2trY2Nj8/Pzb29vv7+/g4ODc3Nzn5+f6+vr9/f3+/v5lTFPdAAAAZklEQVQ4y+3SOxKAIAwEUDTBv6Le/7BaWGyyGSo7Tbs7w4OQ0j+vzjL0bsZiCpTfs2Mhc76dWGj5iMYiOl9QzxSbZ77Iivk8cQEZHkAMjV9LKgDDiADIiAHA0NrSpAJ41qrHJ7/zBblvBX4GStgjAAAAAElFTkSuQmCC)
         246px 0 no-repeat;
     background-size: 16px 16px;
-    z-index: 5;
+    z-index: 115;
 }
 .selectBox .defaultText {
     color: #999;
@@ -672,7 +672,7 @@
     top: 25px;
     -webkit-box-shadow: 0 12px 13px rgba(0, 0, 0, 0.1);
     box-shadow: 0 12px 13px rgba(0, 0, 0, 0.1);
-    z-index: 11;
+    z-index: 111;
 }
 .selectBox ul li {
     height: 40px;
@@ -681,6 +681,7 @@
     padding-left: 10px;
     top: 25px;
     left: 0;
+    cursor: pointer;
 }
 .selectBox ul.showUl {
     height: 200px;

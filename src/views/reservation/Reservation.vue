@@ -27,7 +27,7 @@
                         <img src="./imgs/ic_3.png" class="iconImg" alt="">
                             <div class="selectBox">
                                 <!-- <p class="defaultText" @click="showUl" @blur.prevent="showUl">{{formObj.companyScale}}</p> -->
-                                <input type="text" class="defaultText" @focus="showUl" @blur="hideUl" v-model="formObj.companyScale" >
+                                <input type="text" class="defaultText" @focus="showUl" v-model="formObj.companyScale" >
                                 <ul id="scaleNumber" :style="{height: ulHeight}">
                                     <li v-for="(item, ind) in list" :key="ind" @click="scaleItem(item)">{{item}}</li>
                                 </ul>
@@ -106,7 +106,7 @@ export default {
             errorPoput: false,
             successPoput: false,
             errorMsg:'',
-            ulHeight:0,
+            ulHeight: 0,
             list:['20人以下', '20-100人', '100-300人', '300-500人', '500人以上'],
             msg:'',
             changeMsg: false,
@@ -117,11 +117,12 @@ export default {
     },
     methods: {
         scaleItem(item){
+            console.log('scaleItem',item)
             this.formObj.companyScale = item;
             this.ulHeight = 0;
         },
         showUl(){
-            this.ulHeight = 'auto';
+            this.ulHeight = '205px';
         },
         hideUl(){
             setTimeout(()=>{
